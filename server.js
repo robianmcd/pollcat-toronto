@@ -26,8 +26,8 @@ server.use(express.bodyParser());
 server.use(express.static(path.join(__dirname, 'public')));
 
 // development only
-if ('development' == server.get('env')) {
-  server.use(express.errorHandler());
+if (server.get('env') == 'development') {
+    server.use(express.errorHandler());
 }
 
 server.get('/', function(req, res) {
@@ -35,5 +35,5 @@ server.get('/', function(req, res) {
 });
 
 http.createServer(server).listen(server.get('port'), function(){
-  console.log('Express server listening on port ' + server.get('port'));
+    console.log('Express server listening on port ' + server.get('port'));
 });
