@@ -1,0 +1,1 @@
+var pollCatModule = angular.module('PollCatApp', []);

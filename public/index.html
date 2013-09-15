@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" ng-app="PollCatApp">
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
@@ -8,5 +8,11 @@
 <body>
     Hello World.
 
+    <div ng-controller="HomeCtrl">{{ test }}</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
+
+    <script src="javascripts/pollCatApp.js"></script>
+    <script src="javascripts/controllers/homeCtrl.js"></script>
 </body>
 </html>
