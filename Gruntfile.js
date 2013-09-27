@@ -1,23 +1,51 @@
 module.exports = function(grunt) {
 
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-replace');
+
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        uglify: {
-            options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+
+        watch: {
+            scripts: {
+                files: ['**/*.js'],
+                tasks: ['replace']
             },
-            build: {
-                src: 'src/<%= pkg.name %>.js',
-                dest: 'build/<%= pkg.name %>.min.js'
+            options: {
+                atBegin: true,
+                dateFormat: function(time) {
+                    grunt.log.writeln('Complete in ' + time + 's at ' + new Date().toLocaleTimeString());
+                    grunt.log.writeln('Waiting for changes...');
+                }
+            }
+        },
+
+        replace: {
+            dist: {
+                options: {
+                    patterns: [
+                        {
+                            match: 'hash',
+                            replacement: '<%= new Date().getTime() %>'
+                        }
+                    ]
+                },
+                files: [
+                    {src: ['public/index.html'], dest: 'public/indexCacheBusted.html'}
+                ]
             }
         }
+
     });
 
-    // Load the plugin that provides the "uglify" task.
-    grunt.loadNpmTasks('grunt-contrib-uglify');
+
+
+
+    grunt.registerTask('watchDev', ['watch']);
+    grunt.registerTask('prod', ['replace']);
 
     // Default task(s).
-    grunt.registerTask('default', ['uglify']); 
+    grunt.registerTask('default', ['watch']);
 
 };

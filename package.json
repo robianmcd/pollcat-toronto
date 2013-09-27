@@ -1,12 +1,17 @@
 {
-    "name": "pollcat-toronto",
-    "version": "0.0.1",
-    "private": true,
-    "scripts": {
-        "start": "node server.js"
-    },
-    "dependencies": {
-        "grunt": "~0.4.1",
-        "express": "3.4.0"
-    }
+  "name": "pollcat-toronto",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "express": "3.4.0",
+    "grunt-contrib-concat": "~0.3.0"
+  },
+  "devDependencies": {
+    "grunt-replace": "~0.5.1",
+    "grunt-contrib-watch": "~0.5.3"
+  }
 }

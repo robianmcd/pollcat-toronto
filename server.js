@@ -31,7 +31,7 @@ if (server.get('env') == 'development') {
 }
 
 server.get('/', function(req, res) {
-    res.sendfile("public/index.html");
+    res.sendfile("public/indexCacheBusted.html");
 });
 
 http.createServer(server).listen(server.get('port'), function(){
