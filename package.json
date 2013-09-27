@@ -1,16 +1,19 @@
 {
+  "engines": {
+      "node": "0.10.17"
+  },
+
   "name": "pollcat-toronto",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "echo postinstall && ./node_modules/grunt/bin/grunt prod"
   },
   "dependencies": {
     "grunt": "~0.4.1",
     "express": "3.4.0",
-    "grunt-contrib-concat": "~0.3.0"
-  },
-  "devDependencies": {
+    "grunt-contrib-concat": "~0.3.0",
     "grunt-replace": "~0.5.1",
     "grunt-contrib-watch": "~0.5.3"
   }
