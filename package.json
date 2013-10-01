@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "postinstall": "node_modules/.bin/grunt prod"
+    "postinstall": "grunt prod"
   },
   "dependencies": {
     "grunt": "~0.4.1",
