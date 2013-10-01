@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 
         watch: {
             scripts: {
-                files: ['**/*.js', '**/*.scss'],
+                files: ['**/*.js', '**/*.scss', '**/*.html'],
                 tasks: ['replace', 'compass']
             },
             options: {
