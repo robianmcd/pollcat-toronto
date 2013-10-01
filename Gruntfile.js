@@ -2,6 +2,7 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-replace');
+    grunt.loadNpmTasks('grunt-contrib-compass');
 
     // Project configuration.
     grunt.initConfig({
@@ -9,8 +10,8 @@ module.exports = function(grunt) {
 
         watch: {
             scripts: {
-                files: ['**/*.js'],
-                tasks: ['replace']
+                files: ['**/*.js', '**/*.scss'],
+                tasks: ['replace', 'compass']
             },
             options: {
                 atBegin: true,
@@ -35,6 +36,15 @@ module.exports = function(grunt) {
                     {src: ['public/index.html'], dest: 'public/indexCacheBusted.html'}
                 ]
             }
+        },
+
+        compass: {
+            dist: {
+            options: {
+                sassDir: 'public/stylesheets/sass',
+                cssDir: 'public/stylesheets/css'
+            }
+            }
         }
 
     });
@@ -43,9 +53,9 @@ module.exports = function(grunt) {
 
 
     grunt.registerTask('watchDev', ['watch']);
-    grunt.registerTask('prod', ['replace']);
+    grunt.registerTask('prod', ['replace', 'compass']);
 
     // Default task(s).
-    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('default', ['watchDev']);
 
 };
