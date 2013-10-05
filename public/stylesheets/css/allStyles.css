@@ -1,9 +1,9 @@
-/* line 1, ../sass/_page.scss */
-body {
-  background: #f0efe1;
+/* line 2, ../sass/_page.scss */
+.jumbotron h1, .jumbotron h2, .jumbotron h3, .jumbotron h4 {
+  margin: 0;
 }
 
-/* line 5, ../sass/_page.scss */
-.jumbotron {
-  background: white;
+/* line 7, ../sass/_page.scss */
+hr {
+  border-top: 2px solid #000;
 }
