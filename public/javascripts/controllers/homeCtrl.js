@@ -1,3 +1,3 @@
-var HomeCtrl = function($scope) {
-    $scope.test = "This is a test.";
+var HomeCtrl = function(constants) {
+    this.activeNavItem = constants.navItemEnum.HOME;
 };

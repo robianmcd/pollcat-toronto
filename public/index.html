@@ -2,18 +2,40 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" ng-app="PollCatApp">
 <head>
     <meta charset="utf-8"/>
+    <!--To ensure proper rendering and touch zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>PollCat Toronto</title>
+
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.css">
+    <link rel="stylesheet" href="stylesheets/css/allStyles.css">
 </head>
 <body>
-    Hello World.
-    <ng-view></ng-view>
+    <div class="container">
+        <ng-view></ng-view>
+    </div>
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
+
+    <!--Twitter Bootstrap-->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.js"></script>
+
+    <!--AngularJS-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.js"></script>
     <script src="javascripts/lib/angular-1.2.0-rc.2/angular-route.js"></script>
 
+    <!--*****PollCat******-->
+    <!--Controllers-->
     <script src="javascripts/pollCatApp.js?@@hash"></script>
     <script src="javascripts/controllers/homeCtrl.js?@@hash"></script>
+    <script src="javascripts/controllers/voteCtrl.js?@@hash"></script>
+    <script src="javascripts/controllers/resultsCtrl.js?@@hash"></script>
+
+    <!--Directives-->
+    <script src="javascripts/directives/pcHeader.js?@@hash"></script>
+
+    <!--Services-->
+    <script src="javascripts/services/constants.js?@@hash"></script>
 
 </body>
 </html>

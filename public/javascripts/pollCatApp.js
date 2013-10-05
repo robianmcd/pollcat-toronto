@@ -6,8 +6,16 @@ pollCatModule.config([
         routeProvider.when('/home', {
             templateUrl: '/html/views/home.html',
             controller: 'HomeCtrl as ctrl'
-        });
-        routeProvider.otherwise({
+        })
+        .when('/vote', {
+            templateUrl: '/html/views/vote.html',
+            controller: 'VoteCtrl as ctrl'
+        })
+        .when('/results', {
+            templateUrl: '/html/views/results.html',
+            controller: 'ResultsCtrl as ctrl'
+        })
+        .otherwise({
             redirectTo: '/home'
         });
     }]);

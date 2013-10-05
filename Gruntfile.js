@@ -40,10 +40,10 @@ module.exports = function(grunt) {
 
         compass: {
             dist: {
-            options: {
-                sassDir: 'public/stylesheets/sass',
-                cssDir: 'public/stylesheets/css'
-            }
+                options: {
+                    sassDir: 'public/stylesheets/sass',
+                    cssDir: 'public/stylesheets/css'
+                }
             }
         }
 
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
 
 
     grunt.registerTask('watchDev', ['watch']);
-    grunt.registerTask('prod', ['replace', 'compass']);
+    grunt.registerTask('prod', ['replace']);
 
     // Default task(s).
     grunt.registerTask('default', ['watchDev']);
