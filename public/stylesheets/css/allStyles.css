@@ -1,9 +1,62 @@
-/* line 2, ../sass/_page.scss */
-.jumbotron h1, .jumbotron h2, .jumbotron h3, .jumbotron h4 {
+/* line 1, ../sass/_page.scss */
+.container .jumbotron {
+  box-shadow: 5px 5px 8px black;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 9, ../sass/_page.scss */
+.container .jumbotron h2 {
+  line-height: 140%;
+}
+/* line 13, ../sass/_page.scss */
+.container .jumbotron h1, .container .jumbotron h2, .container .jumbotron h3, .container .jumbotron h4 {
   margin: 0;
 }
 
-/* line 7, ../sass/_page.scss */
+/* line 18, ../sass/_page.scss */
 hr {
   border-top: 2px solid #000;
+}
+
+/* line 22, ../sass/_page.scss */
+.highlight {
+  box-shadow: 2px 2px 3px black;
+}
+
+/* line 1, ../sass/_header.scss */
+.header {
+  margin-top: 10px;
+}
+
+/* line 1, ../sass/_form.scss */
+form.center-form {
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+}
+/* line 6, ../sass/_form.scss */
+form.center-form label {
+  display: block;
+  text-align: center;
+}
+/* line 11, ../sass/_form.scss */
+form.center-form input {
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  display: block;
+}
+/* line 18, ../sass/_form.scss */
+form.center-form button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/* line 26, ../sass/_form.scss */
+form.spaced-form button, form.spaced-form input {
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
