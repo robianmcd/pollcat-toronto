@@ -7,7 +7,7 @@ pollCatModule.config([
             templateUrl: '/html/views/home.html',
             controller: 'HomeCtrl as ctrl'
         })
-        .when('/vote', {
+        .when('/vote/:questionNum', {
             templateUrl: '/html/views/vote.html',
             controller: 'VoteCtrl as ctrl'
         })

@@ -1,0 +1,37 @@
+@import '../modules/allModules';
+
+.btn-white {
+  color: $darkestGrey;
+  background-color: $white;
+  border-color: $grey;
+}
+.btn-white:hover,
+.btn-white:focus,
+.btn-white:active,
+.btn-white.active,
+.open .dropdown-toggle.btn-white {
+  color: $darkestGrey;
+  background-color: $grey;
+  border-color: $darkGrey;
+}
+
+.btn-grey {
+  color: $darkestGrey;
+  background-color: $lightGrey;
+  border-color: $grey;
+}
+.btn-grey:hover,
+.btn-grey:focus,
+.btn-grey:active,
+.btn-grey.active,
+.open .dropdown-toggle.btn-grey {
+  color: $darkestGrey;
+  background-color: $grey;
+  border-color: $darkGrey;
+}
+
+.btn-dark-grey {
+  color: $darkestGrey;
+  background-color: $grey;
+  border-color: $darkGrey;
+}

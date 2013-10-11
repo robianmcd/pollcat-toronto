@@ -1,2 +1,18 @@
 <div active-nav-item="ctrl.activeNavItem" pc-header></div>
-<div>Vote page</div>
+
+<h2 class="text-center">{{ctrl.activeQuestion.title}}</h2>
+<p>{{ctrl.activeQuestion.description}}</p>
+
+<div class="center-block-medium">
+    <div class="btn-group btn-group-lg round-block highlight">
+        <button type="button" ng-click="ctrl.setAnswerState(ctrl.answerStateEnum.DISAGREE)" class="btn {{ctrl.answerButtonGroupInfo[ctrl.answerStateEnum.DISAGREE].buttonColorClass}}">
+            Disagree
+        </button>
+        <button type="button" ng-click="ctrl.setAnswerState(ctrl.answerStateEnum.SKIP)" class="btn {{ctrl.answerButtonGroupInfo[ctrl.answerStateEnum.SKIP].buttonColorClass}}">
+            Skip
+        </button>
+        <button type="button" ng-click="ctrl.setAnswerState(ctrl.answerStateEnum.AGREE)" class="btn {{ctrl.answerButtonGroupInfo[ctrl.answerStateEnum.AGREE].buttonColorClass}}">
+            Agree
+        </button>
+    </div>
+</div>
