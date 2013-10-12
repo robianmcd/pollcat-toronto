@@ -1,5 +1,15 @@
-var VoteCtrl = function(constants, $routeParams) {
+var VoteCtrl = function(constants, $routeParams, $location) {
     var _this = this;
+
+    this.$location = $location;
+
+    this.questionNum = parseInt($routeParams.questionNum);
+
+    if ( !(this.questionNum >= 1 && this.questionNum <= 20) ) {
+        this.$location.path('vote/1');
+    }
+
+    this.questionIndex = this.questionNum - 1;
 
     this.activeNavItem = constants.navItemEnum.VOTE;
 
@@ -10,6 +20,10 @@ var VoteCtrl = function(constants, $routeParams) {
         DISAGREE: 3
     };
 
+    this.disagreeList = [];
+    this.skipList = [];
+    this.agreeList = [];
+
     this.answerState = this.answerStateEnum.UNSET;
 
     this.answerButtonGroupInfo = {};
@@ -17,7 +31,6 @@ var VoteCtrl = function(constants, $routeParams) {
 
     this.getQuestionData(function(questionData) {
         _this.questionData = questionData;
-        _this.questionIndex = $routeParams.questionNum - 1;
         _this.activeQuestion = _this.questionData.questionList[_this.questionIndex];
     });
 
@@ -62,7 +75,7 @@ VoteCtrl.prototype.getQuestionData = function(callback) {
             {
                 title: "Remove bike lanes from College St",
                 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam",
-                agreeCandidates: [1, 4, 3, 9],
+                agreeCandidates: [1, 4, 3, 12],
                 absentCandidates: [7, 13],
                 disagreeCandidates: [18, 9],
                 numAgree: 22,
@@ -103,4 +116,56 @@ VoteCtrl.prototype.getAnswerButtonColorClass = function(buttonAnswerState) {
 VoteCtrl.prototype.setAnswerState = function(newAnswerState) {
     this.answerState = newAnswerState;
     this.updateAnswerButtonGroupInfo();
+    this.updateAnswerStateLists();
+};
+
+VoteCtrl.prototype.getHighlightAnswerButtonsClass = function() {
+    if(this.answerState === this.answerStateEnum.UNSET) {
+        return 'highlight';
+    }
+    else {
+        return '';
+    }
+};
+
+VoteCtrl.prototype.nextVotePage = function() {
+    this.$location.path('vote/' + (this.questionNum + 1) );
+};
+
+VoteCtrl.prototype.previousVotePage = function() {
+    this.$location.path('vote/' + (this.questionNum - 1) );
+};
+
+VoteCtrl.prototype.updateAnswerStateLists = function() {
+    this.disagreeList = [];
+    this.skipList = [];
+    this.agreeList = [];
+
+    if (this.answerState === this.answerStateEnum.DISAGREE) {
+        this.disagreeList.push('You');
+    }
+
+    if (this.answerState === this.answerStateEnum.SKIP) {
+        this.skipList.push('You');
+    }
+
+    if (this.answerState === this.answerStateEnum.AGREE) {
+        this.agreeList.push('You');
+    }
+
+    var i;
+    for (i = 0; i < this.activeQuestion.disagreeCandidates.length; i++) {
+        curCandidateId = this.activeQuestion.disagreeCandidates[i];
+        this.disagreeList.push(this.questionData.candidateIdMap[curCandidateId]);
+    }
+
+    for (i = 0; i < this.activeQuestion.absentCandidates.length; i++) {
+        curCandidateId = this.activeQuestion.absentCandidates[i];
+        this.skipList.push(this.questionData.candidateIdMap[curCandidateId]);
+    }
+
+    for (i = 0; i < this.activeQuestion.agreeCandidates.length; i++) {
+        curCandidateId = this.activeQuestion.agreeCandidates[i];
+        this.agreeList.push(this.questionData.candidateIdMap[curCandidateId]);
+    }
 };

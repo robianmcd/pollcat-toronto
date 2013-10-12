@@ -6,7 +6,6 @@
   border-color: $grey;
 }
 .btn-white:hover,
-.btn-white:focus,
 .btn-white:active,
 .btn-white.active,
 .open .dropdown-toggle.btn-white {
@@ -21,7 +20,6 @@
   border-color: $grey;
 }
 .btn-grey:hover,
-.btn-grey:focus,
 .btn-grey:active,
 .btn-grey.active,
 .open .dropdown-toggle.btn-grey {
@@ -34,4 +32,8 @@
   color: $darkestGrey;
   background-color: $grey;
   border-color: $darkGrey;
+}
+
+.btn-group-fixed-width-lg button.btn {
+  width: 120px;
 }

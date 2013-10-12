@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Client" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" uri="http://localhost:3000/">
+    <mapping url="http://localhost:3000" local-file="$PROJECT_DIR$/public" />
+    <RunnerSettings RunnerId="JavascriptDebugRunner" />
+    <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
+    <method />
+  </configuration>
+</component>

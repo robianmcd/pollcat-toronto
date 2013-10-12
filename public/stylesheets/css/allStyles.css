@@ -5,9 +5,8 @@
   border-color: #cccccc;
 }
 
-/* line 12, ../sass/partials/_button.scss */
+/* line 11, ../sass/partials/_button.scss */
 .btn-white:hover,
-.btn-white:focus,
 .btn-white:active,
 .btn-white.active,
 .open .dropdown-toggle.btn-white {
@@ -16,16 +15,15 @@
   border-color: #adadad;
 }
 
-/* line 18, ../sass/partials/_button.scss */
+/* line 17, ../sass/partials/_button.scss */
 .btn-grey {
   color: #333333;
   background-color: #ebebeb;
   border-color: #cccccc;
 }
 
-/* line 27, ../sass/partials/_button.scss */
+/* line 25, ../sass/partials/_button.scss */
 .btn-grey:hover,
-.btn-grey:focus,
 .btn-grey:active,
 .btn-grey.active,
 .open .dropdown-toggle.btn-grey {
@@ -34,11 +32,16 @@
   border-color: #adadad;
 }
 
-/* line 33, ../sass/partials/_button.scss */
+/* line 31, ../sass/partials/_button.scss */
 .btn-dark-grey {
   color: #333333;
   background-color: #cccccc;
   border-color: #adadad;
+}
+
+/* line 37, ../sass/partials/_button.scss */
+.btn-group-fixed-width-lg button.btn {
+  width: 120px;
 }
 
 /* line 1, ../sass/partials/_form.scss */
@@ -109,7 +112,7 @@ div.center-block-medium {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  width: 300px;
+  width: 255px;
 }
 
 /* line 33, ../sass/partials/_page.scss */

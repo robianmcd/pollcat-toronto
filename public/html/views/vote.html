@@ -4,7 +4,7 @@
 <p>{{ctrl.activeQuestion.description}}</p>
 
 <div class="center-block-medium">
-    <div class="btn-group btn-group-lg round-block highlight">
+    <div class="btn-group btn-group-lg round-block {{ctrl.getHighlightAnswerButtonsClass()}}">
         <button type="button" ng-click="ctrl.setAnswerState(ctrl.answerStateEnum.DISAGREE)" class="btn {{ctrl.answerButtonGroupInfo[ctrl.answerStateEnum.DISAGREE].buttonColorClass}}">
             Disagree
         </button>
@@ -16,3 +16,31 @@
         </button>
     </div>
 </div>
+
+<div ng-show="ctrl.answerState !== ctrl.answerStateEnum.UNSET">
+    <h3 class="text-center">Results</h3>
+    <div class="row">
+        <div class="col-sm-4">
+            <div panel-title="Disagreed" list="ctrl.disagreeList" list-panel></div>
+        </div>
+        <div class="col-sm-4">
+            <div panel-title="Skipped" list="ctrl.skipList" list-panel></div>
+        </div>
+        <div class="col-sm-4">
+            <div panel-title="Agreed" list="ctrl.agreeList" list-panel></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 btn-group-lg btn-group-fixed-width-lg">
+            <button type="button" ng-click="ctrl.previousVotePage()" ng-show="ctrl.questionNum > 1" class="btn btn-grey pull-left">
+                Previous
+            </button>
+            <button type="button" ng-click="ctrl.nextVotePage()" class="btn btn-primary pull-right highlight">
+                Next <span class="glyphicon glyphicon-arrow-right"></span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<hr>
