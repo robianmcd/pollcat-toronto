@@ -3,7 +3,7 @@
 <h2 class="text-center">{{ctrl.activeQuestion.title}}</h2>
 <p>{{ctrl.activeQuestion.description}}</p>
 
-<div class="center-block-medium">
+<div class="center-block-md section">
     <div class="btn-group btn-group-lg round-block {{ctrl.getHighlightAnswerButtonsClass()}}">
         <button type="button" ng-click="ctrl.setAnswerState(ctrl.answerStateEnum.DISAGREE)" class="btn {{ctrl.answerButtonGroupInfo[ctrl.answerStateEnum.DISAGREE].buttonColorClass}}">
             Disagree
@@ -32,8 +32,8 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-12 btn-group-lg btn-group-fixed-width-lg">
-            <button type="button" ng-click="ctrl.previousVotePage()" ng-show="ctrl.questionNum > 1" class="btn btn-grey pull-left">
+        <div class="col-sm-12 btn-group btn-group-lg btn-group-fixed-width-lg">
+            <button type="button" ng-click="ctrl.previousVotePage()" ng-show="ctrl.questionNum > 1" class="btn btn-light-grey pull-left">
                 Previous
             </button>
             <button type="button" ng-click="ctrl.nextVotePage()" class="btn btn-primary pull-right highlight">
@@ -42,5 +42,19 @@
         </div>
     </div>
 </div>
+
+
+
+<div class="row center-block-lg">
+    <div class="vertical-space-lg"></div>
+    <div class="col-sm-12">
+        <div class="btn-group btn-group-xs btn-group-fixed-width-xs">
+            <button ng-repeat="pageItem in ctrl.pageList" type="button" ng-click="ctrl.gotoVotePage(pageItem.pageNum)"  ng-class="{'btn-light-grey': !pageItem.isActivePage, 'btn-grey': pageItem.isActivePage, 'btn': true}">
+                {{pageItem.pageNum}}
+            </button>
+        </div>
+    </div>
+</div>
+
 
 <hr>

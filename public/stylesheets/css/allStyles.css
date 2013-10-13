@@ -16,24 +16,24 @@
 }
 
 /* line 17, ../sass/partials/_button.scss */
-.btn-grey {
+.btn-light-grey {
   color: #333333;
   background-color: #ebebeb;
-  border-color: #cccccc;
+  border-color: #adadad;
 }
 
 /* line 25, ../sass/partials/_button.scss */
-.btn-grey:hover,
-.btn-grey:active,
-.btn-grey.active,
-.open .dropdown-toggle.btn-grey {
+.btn-light-grey:hover,
+.btn-light-grey:active,
+.btn-light-grey.active,
+.open .dropdown-toggle.btn-light-grey {
   color: #333333;
   background-color: #cccccc;
   border-color: #adadad;
 }
 
 /* line 31, ../sass/partials/_button.scss */
-.btn-dark-grey {
+.btn-grey {
   color: #333333;
   background-color: #cccccc;
   border-color: #adadad;
@@ -42,6 +42,19 @@
 /* line 37, ../sass/partials/_button.scss */
 .btn-group-fixed-width-lg button.btn {
   width: 120px;
+}
+
+/* line 41, ../sass/partials/_button.scss */
+.btn-group-xs > .btn {
+  padding: 4px 8px;
+  font-size: 10px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+/* line 48, ../sass/partials/_button.scss */
+.btn-group-fixed-width-xs button.btn {
+  width: 26px;
 }
 
 /* line 1, ../sass/partials/_form.scss */
@@ -100,22 +113,50 @@ form.spaced-form button, form.spaced-form input {
 /* line 18, ../sass/partials/_page.scss */
 hr {
   border-top: 2px solid #000;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-/* line 22, ../sass/partials/_page.scss */
+/* line 24, ../sass/partials/_page.scss */
 .highlight {
   box-shadow: 2px 2px 3px black;
 }
 
-/* line 26, ../sass/partials/_page.scss */
-div.center-block-medium {
+/* line 28, ../sass/partials/_page.scss */
+div.center-block-md {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  width: 255px;
+  width: 265px;
 }
 
-/* line 33, ../sass/partials/_page.scss */
+/* line 35, ../sass/partials/_page.scss */
+div.center-block-lg {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 550px;
+}
+
+/* line 42, ../sass/partials/_page.scss */
 .round-block {
   border-radius: 6px 6px 6px 6px;
+}
+
+/* line 46, ../sass/partials/_page.scss */
+div.section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 51, ../sass/partials/_page.scss */
+div.vertical-space {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* line 56, ../sass/partials/_page.scss */
+div.vertical-space-lg {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

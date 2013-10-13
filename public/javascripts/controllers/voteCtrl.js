@@ -11,6 +11,15 @@ var VoteCtrl = function(constants, $routeParams, $location) {
 
     this.questionIndex = this.questionNum - 1;
 
+    this.pageList = [];
+    for (var i = 0; i < 20; i++) {
+        this.pageList.push(
+            {
+                pageNum: i+1,
+                isActivePage: (this.questionIndex === i)
+            });
+    }
+
     this.activeNavItem = constants.navItemEnum.VOTE;
 
     this.answerStateEnum = {
@@ -106,10 +115,10 @@ VoteCtrl.prototype.getAnswerButtonColorClass = function(buttonAnswerState) {
         return 'btn-white';
     }
     else if (this.answerState == buttonAnswerState) {
-        return 'btn-dark-grey';
+        return 'btn-grey';
     }
     else {
-        return 'btn-grey';
+        return 'btn-light-grey';
     }
 };
 
@@ -134,6 +143,10 @@ VoteCtrl.prototype.nextVotePage = function() {
 
 VoteCtrl.prototype.previousVotePage = function() {
     this.$location.path('vote/' + (this.questionNum - 1) );
+};
+
+VoteCtrl.prototype.gotoVotePage = function(pageNum) {
+    this.$location.path('vote/' + pageNum);
 };
 
 VoteCtrl.prototype.updateAnswerStateLists = function() {

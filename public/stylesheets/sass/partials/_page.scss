@@ -17,19 +17,43 @@
 
 hr {
   border-top: 2px solid #000;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .highlight {
   box-shadow:2px 2px 3px black;
 }
 
-div.center-block-medium {
+div.center-block-md {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  width: 255px;
+  width: 265px;
+}
+
+div.center-block-lg {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 550px;
 }
 
 .round-block {
   border-radius: 6px 6px 6px 6px;
+}
+
+div.section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+div.vertical-space {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+div.vertical-space-lg {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

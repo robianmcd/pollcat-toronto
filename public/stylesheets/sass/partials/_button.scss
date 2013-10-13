@@ -14,21 +14,21 @@
   border-color: $darkGrey;
 }
 
-.btn-grey {
+.btn-light-grey {
   color: $darkestGrey;
   background-color: $lightGrey;
-  border-color: $grey;
+  border-color: $darkGrey;
 }
-.btn-grey:hover,
-.btn-grey:active,
-.btn-grey.active,
-.open .dropdown-toggle.btn-grey {
+.btn-light-grey:hover,
+.btn-light-grey:active,
+.btn-light-grey.active,
+.open .dropdown-toggle.btn-light-grey {
   color: $darkestGrey;
   background-color: $grey;
   border-color: $darkGrey;
 }
 
-.btn-dark-grey {
+.btn-grey {
   color: $darkestGrey;
   background-color: $grey;
   border-color: $darkGrey;
@@ -36,4 +36,15 @@
 
 .btn-group-fixed-width-lg button.btn {
   width: 120px;
+}
+
+.btn-group-xs > .btn {
+  padding: 4px 8px;
+  font-size: 10px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+.btn-group-fixed-width-xs button.btn {
+  width: 26px;
 }
