@@ -1,4 +1,4 @@
-var pollCatModule = angular.module('PollCatApp', ['ngRoute']);
+var pollCatModule = angular.module('PollCatApp', ['ngRoute', 'ngCookies']);
 
 pollCatModule.config([
     '$routeProvider',

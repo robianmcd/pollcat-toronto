@@ -1,18 +1,20 @@
-var VoteCtrl = function(constants, $routeParams, $location) {
+var VoteCtrl = function(constants, $routeParams, $location, userSession) {
     var _this = this;
 
+    this.constants = constants;
     this.$location = $location;
+    this.userSession = userSession;
 
     this.questionNum = parseInt($routeParams.questionNum);
 
-    if ( !(this.questionNum >= 1 && this.questionNum <= 20) ) {
+    if ( !(this.questionNum >= 1 && this.questionNum <= this.constants.NUM_QUESTIONS) ) {
         this.$location.path('vote/1');
     }
 
     this.questionIndex = this.questionNum - 1;
 
     this.pageList = [];
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < this.constants.NUM_QUESTIONS; i++) {
         this.pageList.push(
             {
                 pageNum: i+1,
@@ -20,20 +22,15 @@ var VoteCtrl = function(constants, $routeParams, $location) {
             });
     }
 
-    this.activeNavItem = constants.navItemEnum.VOTE;
+    this.activeNavItem = this.constants.navItemEnum.VOTE;
 
-    this.answerStateEnum = {
-        UNSET: 0,
-        AGREE: 1,
-        SKIP: 2,
-        DISAGREE: 3
-    };
+    this.answerStateEnum = this.constants.answerStateEnum;
 
     this.disagreeList = [];
     this.skipList = [];
     this.agreeList = [];
 
-    this.answerState = this.answerStateEnum.UNSET;
+    this.answerState = userSession.getUserAnswers()[this.questionIndex];
 
     this.answerButtonGroupInfo = {};
     this.updateAnswerButtonGroupInfo();
@@ -41,7 +38,10 @@ var VoteCtrl = function(constants, $routeParams, $location) {
     this.getQuestionData(function(questionData) {
         _this.questionData = questionData;
         _this.activeQuestion = _this.questionData.questionList[_this.questionIndex];
+        _this.updateAnswerStateLists();
     });
+
+
 
 };
 
@@ -124,6 +124,7 @@ VoteCtrl.prototype.getAnswerButtonColorClass = function(buttonAnswerState) {
 
 VoteCtrl.prototype.setAnswerState = function(newAnswerState) {
     this.answerState = newAnswerState;
+    this.userSession.setUserAnswer(this.questionIndex, this.answerState);
     this.updateAnswerButtonGroupInfo();
     this.updateAnswerStateLists();
 };
