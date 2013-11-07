@@ -9,13 +9,24 @@ pollCatModule.config([
         })
         .when('/vote/:questionNum', {
             templateUrl: '/html/views/vote.html',
-            controller: 'VoteCtrl as ctrl'
+            controller: 'VoteCtrl as ctrl',
+            resolve: {
+                loadQuestionData: loadQuestionData
+            }
         })
         .when('/results', {
             templateUrl: '/html/views/results.html',
-            controller: 'ResultsCtrl as ctrl'
+            controller: 'ResultsCtrl as ctrl',
+            resolve: {
+                loadQuestionData: loadQuestionData
+            }
         })
         .otherwise({
             redirectTo: '/home'
         });
-    }]);
+    }
+]);
+
+var loadQuestionData = function(userSession) {
+    return userSession.promiseToHaveQuestionData();
+};

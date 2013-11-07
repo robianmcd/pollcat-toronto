@@ -3,147 +3,10 @@ var pollCatModule = angular.module('PollCatApp');
 pollCatModule.directive("candidateResultsChart", function() {
     return {
         scope: {
-            panelTitle:'@',
-            list:'='
+            chartTitle:'@',
+            candidateScoreList:'='
         },
         link: function(scope, element) {
-            var dataColumn = {
-                chart: {
-                    type: 'column'
-                },
-                legend: {
-                    enabled: false
-                },
-                title: {
-                    text: 'Mayor'
-                },
-                xAxis: {
-                    categories: ['Rob Ford', 'Chris Onysko', 'Lee Done', 'Jasper Belevou-thompson'],
-                    labels: {
-                        rotation: -35,
-                        align: 'right',
-                        style: {
-                            fontSize: '13px',
-                            fontFamily: 'Verdana, sans-serif'
-                        }
-                    }
-                },
-                yAxis: {
-                    min: 0,
-                    max: 100,
-                    title: {
-                        text: 'Same votes (%)'
-                    },
-                    gridLineColor: 'transparent'
-                },
-
-                plotOptions: {
-                    column: {
-                        pointPadding: 0.2,
-                        borderWidth: 0,
-                        dataLabels: {
-                            enabled: true,
-                            style: {
-                                fontWeight: 'bold'
-                            },
-                            formatter: function() {
-                                return this.y +'%';
-                            }
-                        }
-                    }
-                },
-                series: [{
-                    name: "series name",
-                    data: [
-                        {
-                            y: 86,
-                            color: '#00B'
-                        },
-                        {
-                            y: 76,
-                            color: '#117'
-                        },
-                        {
-                            y: 50,
-                            color: '#224'
-                        },
-                        {
-                            y: 20,
-                            color: '#223'
-                        }
-                    ]
-                }],
-                credits: {
-                    enabled: false
-                }
-            };
-
-
-            var dataBar = {
-                chart: {
-                    type: 'bar'
-                },
-                legend: {
-                    enabled: false
-                },
-                title: {
-                    text: 'Mayor'
-                },
-                xAxis: {
-                    categories: ['Rob Ford', 'Chris Onysko', 'Lee Done', 'Jasper Belevou-thompson'],
-                    labels: {
-                        align: 'right'
-                    }
-                },
-                yAxis: {
-                    min: 0,
-                    max: 100,
-                    title: {
-                        text: 'Same votes (%)'
-                    },
-                    gridLineColor: 'transparent'
-                },
-
-                plotOptions: {
-                    column: {
-                        pointPadding: 0.2,
-                        borderWidth: 0,
-                        dataLabels: {
-                            enabled: true,
-                            style: {
-                                fontWeight: 'bold'
-                            },
-                            formatter: function() {
-                                return this.y +'%';
-                            }
-                        }
-                    }
-                },
-                series: [{
-                    name: "series name",
-                    data: [
-                        {
-                            y: 86,
-                            color: '#00B'
-                        },
-                        {
-                            y: 76,
-                            color: '#117'
-                        },
-                        {
-                            y: 50,
-                            color: '#224'
-                        },
-                        {
-                            y: 20,
-                            color: '#223'
-                        }
-                    ]
-                }],
-                credits: {
-                    enabled: false
-                }
-            };
 
             var minimal = {
                 chart: {
@@ -154,7 +17,7 @@ pollCatModule.directive("candidateResultsChart", function() {
                     enabled: false
                 },
                 title: {
-                    text: 'Candidates for Mayor'
+                    text: scope.chartTitle
                 },
                 xAxis: {
                     categories: ['Rob Ford', 'Chris Onysko', 'Lee Done', 'Jasper Belevou-thompson'],

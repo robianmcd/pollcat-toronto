@@ -15,5 +15,10 @@ var Constants = function() {
         DISAGREE: 3
     };
 
+    this.candidateTypeEnum = {
+        MAYOR: 0,
+        COUNCILOR: 1
+    };
+
     this.NUM_QUESTIONS = 20;
 };
