@@ -1,7 +1,4 @@
 {
-  "engines": {
-    "node": "0.10.17"
-  },
   "name": "pollcat-toronto",
   "version": "0.0.1",
   "private": true,
