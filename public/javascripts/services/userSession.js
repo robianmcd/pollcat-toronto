@@ -35,11 +35,10 @@ UserSession.prototype.promiseToHaveQuestionData = function() {
                     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam",
                     agreeCandidates: [1, 4, 3, 9],
                     absentCandidates: [7, 13],
-                    disagreeCandidates: [18, 9],
+                    disagreeCandidates: [18, 12],
                     numAgree: 22,
                     numAbsent: 4,
-                    numDisagree: 15,
-                    averageAgreePercent: 0.6453
+                    numDisagree: 15
                 },
                 {
                     title: "Shark fin soup should be banned",
@@ -49,8 +48,7 @@ UserSession.prototype.promiseToHaveQuestionData = function() {
                     disagreeCandidates: [7],
                     numAgree: 36,
                     numAbsent: 2,
-                    numDisagree: 7,
-                    averageAgreePercent: 0.831
+                    numDisagree: 7
                 },
                 {
                     title: "Remove bike lanes from College St",
@@ -60,8 +58,7 @@ UserSession.prototype.promiseToHaveQuestionData = function() {
                     disagreeCandidates: [18, 9],
                     numAgree: 22,
                     numAbsent: 4,
-                    numDisagree: 15,
-                    averageAgreePercent: 0.6453
+                    numDisagree: 15
                 }
             ]
         };

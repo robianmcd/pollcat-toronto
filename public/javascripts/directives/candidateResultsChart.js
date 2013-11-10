@@ -1,12 +1,31 @@
 var pollCatModule = angular.module('PollCatApp');
 
-pollCatModule.directive("candidateResultsChart", function() {
+pollCatModule.directive("candidateResultsChart", function(constants) {
     return {
         scope: {
             chartTitle:'@',
             candidateScoreList:'='
         },
         link: function(scope, element) {
+
+            var nameList = [];
+            var scoreData = [];
+
+            for (var i = 0; i < scope.candidateScoreList.length; i++) {
+                var curCandidateInfo = scope.candidateScoreList[i];
+                nameList[i] = curCandidateInfo.name;
+
+                curColor = tinycolor({
+                    h:constants.primaryColor.hue,
+                    s: constants.primaryColor.saturation * curCandidateInfo.score,
+                    v: constants.primaryColor.value
+                });
+
+                scoreData[i] = {
+                    y: Math.round(curCandidateInfo.score * 100),
+                    color: curColor.toHexString()
+                };
+            }
 
             var minimal = {
                 chart: {
@@ -20,7 +39,7 @@ pollCatModule.directive("candidateResultsChart", function() {
                     text: scope.chartTitle
                 },
                 xAxis: {
-                    categories: ['Rob Ford', 'Chris Onysko', 'Lee Done', 'Jasper Belevou-thompson'],
+                    categories: nameList,
                     labels: {
                         align: 'right'
                     }
@@ -59,24 +78,7 @@ pollCatModule.directive("candidateResultsChart", function() {
                 },
                 series: [{
                     name: "Percent of topics you agreed on",
-                    data: [
-                        {
-                            y: 96,
-                            color: '#428BCA'
-                        },
-                        {
-                            y: 76,
-                            color: '#5E99C9'
-                        },
-                        {
-                            y: 50,
-                            color: '#79A5C6'
-                        },
-                        {
-                            y: 20,
-                            color: '#9BB3C4'
-                        }
-                    ]
+                    data: scoreData
                 }],
                 credits: {
                     enabled: false

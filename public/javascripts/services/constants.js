@@ -21,4 +21,11 @@ var Constants = function() {
     };
 
     this.NUM_QUESTIONS = 20;
+
+    this.primaryColor = {
+        hue: 207,
+        saturation: 67,
+        value: 79,
+        hex: "#428BCA"
+    }
 };

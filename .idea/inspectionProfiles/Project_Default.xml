@@ -6,7 +6,7 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="9">
+          <list size="10">
             <item index="0" class="java.lang.String" itemvalue="activenavitem" />
             <item index="1" class="java.lang.String" itemvalue="pc-header" />
             <item index="2" class="java.lang.String" itemvalue="active-nav-item" />
@@ -16,6 +16,7 @@
             <item index="6" class="java.lang.String" itemvalue="panel-title" />
             <item index="7" class="java.lang.String" itemvalue="candidate-results-chart" />
             <item index="8" class="java.lang.String" itemvalue="chart-title" />
+            <item index="9" class="java.lang.String" itemvalue="candidate-score-list" />
           </list>
         </value>
       </option>
