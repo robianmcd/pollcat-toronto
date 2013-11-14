@@ -1,72 +1,39 @@
 var pollCatModule = angular.module('PollCatApp');
-pollCatModule.factory('userSession', function($cookieStore, $log, $q, constants) {return new UserSession($cookieStore, $log, $q, constants);});
+pollCatModule.factory('userSession', function($cookieStore, $log, $q, $http, constants) {
+    return new UserSession($cookieStore, $log, $q, $http, constants);
+});
 
-var UserSession = function($cookieStore, $log, $q, constants) {
+var UserSession = function($cookieStore, $log, $q, $http, constants) {
     this.$cookieStore = $cookieStore;
     this.constants = constants;
     this.$log = $log;
     this.$q = $q;
+    this.$http = $http;
 
     this.USER_ANSWERS_KEY = 'userAnswers';
-    this.QUESTION_DATA_KEY = 'questionData';
+    this.QUESTION_LIST_KEY = 'questionList';
+    this.CANDIDATE_MAP_KEY = 'candidateMap';
     this.candidateTypeEnum = this.constants.candidateTypeEnum;
 
 };
 
-UserSession.prototype.promiseToHaveQuestionData = function() {
-    if (this.$cookieStore.get(this.QUESTION_DATA_KEY) === undefined) {
-        //TODO: load this from the server and return an http promise. Also we should handel the case where
-        // the http request fails. see this video for more info on how to do that:
-        // http://egghead.io/lessons/angularjs-resolve-routechangeerror
-        var questionData = {
-            candidateIdMap: {
-                1: {name: 'Rob Ford', type: this.candidateTypeEnum.MAYOR},
-                4: {name: 'Erica Downes', type: this.candidateTypeEnum.MAYOR},
-                3: {name: 'Greg Davis', type: this.candidateTypeEnum.MAYOR},
-                7: {name: 'Chris Onysko', type: this.candidateTypeEnum.MAYOR},
-                13: {name: 'Sam Richards', type: this.candidateTypeEnum.COUNCILOR},
-                12: {name: 'Robin Loyd', type: this.candidateTypeEnum.COUNCILOR},
-                18: {name: 'Steve French', type: this.candidateTypeEnum.COUNCILOR},
-                9: {name: 'Lee Done', type: this.candidateTypeEnum.COUNCILOR}
-            },
-            questionList: [
-                {
-                    title: "Remove bike lanes from College St",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam",
-                    agreeCandidates: [1, 4, 3, 9],
-                    absentCandidates: [7, 13],
-                    disagreeCandidates: [18, 12],
-                    numAgree: 22,
-                    numAbsent: 4,
-                    numDisagree: 15
-                },
-                {
-                    title: "Shark fin soup should be banned",
-                    description: "Nulla quam velit. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam",
-                    agreeCandidates: [1, 4, 3, 9, 18, 13],
-                    absentCandidates: [12],
-                    disagreeCandidates: [7],
-                    numAgree: 36,
-                    numAbsent: 2,
-                    numDisagree: 7
-                },
-                {
-                    title: "Remove bike lanes from College St",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam",
-                    agreeCandidates: [1, 4, 3, 12],
-                    absentCandidates: [7, 13],
-                    disagreeCandidates: [18, 9],
-                    numAgree: 22,
-                    numAbsent: 4,
-                    numDisagree: 15
-                }
-            ]
-        };
-        this.$cookieStore.put(this.QUESTION_DATA_KEY, questionData);
-        var defer = this.$q.defer();
-        defer.resolve();
-        return defer.promise;
+UserSession.prototype.promiseToHaveCandidateMap = function() {
+    var _this = this;
 
+    if (this.$cookieStore.get(this.CANDIDATE_MAP_KEY) === undefined) {
+        //TODO: get ward from cookie?
+
+        return this.$http.get('/api/candidates/1')
+            .success(function(data) {
+                var candidateMap = {};
+
+                //Convert the array into a map with ids as keys.
+                for (var i = 0; i < data.length; i++) {
+                    candidateMap[data[i]._id] = data[i];
+                }
+
+                _this.$cookieStore.put(_this.CANDIDATE_MAP_KEY, candidateMap);
+            });
     } else {
         var defer = this.$q.defer();
         defer.resolve();
@@ -74,8 +41,76 @@ UserSession.prototype.promiseToHaveQuestionData = function() {
     }
 };
 
-UserSession.prototype.getQuestionData = function() {
-    return this.$cookieStore.get(this.QUESTION_DATA_KEY);
+UserSession.prototype.promiseToHaveQuestionList = function() {
+    var _this = this;
+
+    if (this.$cookieStore.get(this.QUESTION_LIST_KEY) === undefined) {
+        //TODO: d handel the case where the http request fails. see this video for more info on how to do that:
+        // http://egghead.io/lessons/angularjs-resolve-routechangeerror
+        return this.$http.get('/api/questions')
+            .success(function(data) {
+                _this.$cookieStore.put(_this.QUESTION_LIST_KEY, data);
+            });
+    } else {
+        var defer = this.$q.defer();
+        defer.resolve();
+        return defer.promise;
+    }
+};
+
+/*
+{
+    1: {name: 'Rob Ford', type: candidateTypeEnum.MAYOR},
+    4: {name: 'Erica Downes', type: candidateTypeEnum.MAYOR},
+    3: {name: 'Greg Davis', type: candidateTypeEnum.MAYOR},
+    7: {name: 'Chris Onysko', type: candidateTypeEnum.MAYOR},
+    13: {name: 'Sam Richards', type: candidateTypeEnum.COUNCILOR},
+    12: {name: 'Robin Loyd', type: candidateTypeEnum.COUNCILOR},
+    18: {name: 'Steve French', type: candidateTypeEnum.COUNCILOR},
+    9: {name: 'Lee Done', type: candidateTypeEnum.COUNCILOR}
+}
+*/
+UserSession.prototype.getCandidateMap = function() {
+    return this.$cookieStore.get(this.CANDIDATE_MAP_KEY);
+};
+
+
+/*
+[
+    {
+        title: "Remove bike lanes from College St",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam",
+        agreeCandidates: [1, 4, 3, 9],
+        absentCandidates: [7, 13],
+        disagreeCandidates: [18, 12],
+        numAgree: 22,
+        numAbsent: 4,
+        numDisagree: 15
+    },
+    {
+        title: "Shark fin soup should be banned",
+        description: "Nulla quam velit. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam",
+        agreeCandidates: [1, 4, 3, 9, 18, 13],
+        absentCandidates: [12],
+        disagreeCandidates: [7],
+        numAgree: 36,
+        numAbsent: 2,
+        numDisagree: 7
+    },
+    {
+        title: "Remove bike lanes from College St",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam",
+        agreeCandidates: [1, 4, 3, 12],
+        absentCandidates: [7, 13],
+        disagreeCandidates: [18, 9],
+        numAgree: 22,
+        numAbsent: 4,
+        numDisagree: 15
+    }
+]
+*/
+UserSession.prototype.getQuestionList = function() {
+    return this.$cookieStore.get(this.QUESTION_LIST_KEY);
 };
 
 UserSession.prototype.getUserAnswers = function() {

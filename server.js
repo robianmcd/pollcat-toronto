@@ -6,6 +6,8 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
+var mongodb = require('mongodb');
+var MongoClient = mongodb.MongoClient;
 
 var server = express();
 
@@ -30,10 +32,43 @@ if (server.get('env') == 'development') {
     server.use(express.errorHandler());
 }
 
+//Connect to Mongo collections
+var questionDb;
+var candidateDb;
+
+MongoClient.connect('mongodb://pcadmin:pctoronto@paulo.mongohq.com:10023/app17991090', function(err, db) {
+    questionDb = db.collection('questions');
+    candidateDb = db.collection('candidates');
+});
+
+
+//Setup endpoints
 server.get('/', function(req, res) {
     res.sendfile("public/indexCacheBusted.html");
 });
 
+server.get('/api/questions', function (req, res) {
+    res.header("Cache-Control", "max-age=0,no-cache,no-store");
+    questionDb.find().toArray(function (err, items) {
+        res.send(items);
+    });
+});
+
+server.get('/api/candidates/:ward', function (req, res) {
+    res.header("Cache-Control", "max-age=0,no-cache,no-store");
+
+    //Find candidates that are from the specified ward or are running for mayor
+    candidateDb.find(
+        {$or: [
+            {ward: parseInt(req.params.ward)},
+            {type: 0}
+        ]})
+        .toArray(function (err, items) {
+            res.send(items);
+        });
+});
+
+//Start Server
 http.createServer(server).listen(server.get('port'), function(){
     console.log('Express server listening on port ' + server.get('port'));
 });

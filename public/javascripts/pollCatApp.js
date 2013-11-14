@@ -11,6 +11,7 @@ pollCatModule.config([
             templateUrl: '/html/views/vote.html',
             controller: 'VoteCtrl as ctrl',
             resolve: {
+                loadCandidateData: loadCandidateData,
                 loadQuestionData: loadQuestionData
             }
         })
@@ -18,6 +19,7 @@ pollCatModule.config([
             templateUrl: '/html/views/results.html',
             controller: 'ResultsCtrl as ctrl',
             resolve: {
+                loadCandidateData: loadCandidateData,
                 loadQuestionData: loadQuestionData
             }
         })
@@ -28,5 +30,9 @@ pollCatModule.config([
 ]);
 
 var loadQuestionData = function(userSession) {
-    return userSession.promiseToHaveQuestionData();
+    return userSession.promiseToHaveQuestionList();
+};
+
+var loadCandidateData = function(userSession) {
+    return userSession.promiseToHaveCandidateMap();
 };

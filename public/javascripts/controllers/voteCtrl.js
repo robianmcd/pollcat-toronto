@@ -36,8 +36,10 @@ var VoteCtrl = function(constants, $routeParams, $location, userSession) {
     this.answerButtonGroupInfo = {};
     this.updateAnswerButtonGroupInfo();
 
-    this.questionData = this.userSession.getQuestionData();
-    this.activeQuestion = this.questionData.questionList[this.questionIndex];
+    this.questionList = this.userSession.getQuestionList();
+    this.candidateMap = this.userSession.getCandidateMap();
+
+    this.activeQuestion = this.questionList[this.questionIndex];
     this.updateAnswerStateLists();
 
 };
@@ -114,16 +116,16 @@ VoteCtrl.prototype.updateAnswerStateLists = function() {
     var i;
     for (i = 0; i < this.activeQuestion.disagreeCandidates.length; i++) {
         curCandidateId = this.activeQuestion.disagreeCandidates[i];
-        this.disagreeList.push(this.questionData.candidateIdMap[curCandidateId].name);
+        this.disagreeList.push(this.candidateMap[curCandidateId].name);
     }
 
     for (i = 0; i < this.activeQuestion.absentCandidates.length; i++) {
         curCandidateId = this.activeQuestion.absentCandidates[i];
-        this.skipList.push(this.questionData.candidateIdMap[curCandidateId].name);
+        this.skipList.push(this.candidateMap[curCandidateId].name);
     }
 
     for (i = 0; i < this.activeQuestion.agreeCandidates.length; i++) {
         curCandidateId = this.activeQuestion.agreeCandidates[i];
-        this.agreeList.push(this.questionData.candidateIdMap[curCandidateId].name);
+        this.agreeList.push(this.candidateMap[curCandidateId].name);
     }
 };

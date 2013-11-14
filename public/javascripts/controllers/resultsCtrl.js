@@ -8,14 +8,15 @@ var ResultsCtrl = function($log, constants, userSession) {
     this.answerStateEnum = constants.answerStateEnum;
 
     this.userAnswers = userSession.getUserAnswers();
-    this.questionData = userSession.getQuestionData();
+    this.questionList = userSession.getQuestionList();
+    this.candidateMap = userSession.getCandidateMap();
 
     this.mayorList = [];
     this.councilorList = [];
 
     //TODO: setup mayorList and councilorList and pass them to the directive.
 
-    var candidateIdMap = $.extend({}, this.questionData.candidateIdMap);
+    var candidateIdMap = $.extend({}, this.candidateMap);
     var id;
     for (id in candidateIdMap) {
         if (candidateIdMap.hasOwnProperty(id)) {
@@ -28,7 +29,7 @@ var ResultsCtrl = function($log, constants, userSession) {
 
     for (var questionIndex = 0; questionIndex < this.userAnswers.length; questionIndex++) {
 
-        var curQuestion = this.questionData.questionList[questionIndex];
+        var curQuestion = this.questionList[questionIndex];
         var sameAnswerAsUserCandidatesList;
         switch(this.userAnswers[questionIndex])
         {
