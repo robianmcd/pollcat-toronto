@@ -15,24 +15,25 @@ var UserSession = function($cookieStore, $log, $q, $http, constants) {
     this.CANDIDATE_MAP_KEY = 'candidateMap';
     this.candidateTypeEnum = this.constants.candidateTypeEnum;
 
+
+    this.questionList = null;
+    this.candidateMap = null;
 };
 
 UserSession.prototype.promiseToHaveCandidateMap = function() {
     var _this = this;
 
-    if (this.$cookieStore.get(this.CANDIDATE_MAP_KEY) === undefined) {
+    if (this.candidateMap === null) {
         //TODO: get ward from cookie?
 
         return this.$http.get('/api/candidates/1')
             .success(function(data) {
-                var candidateMap = {};
+                _this.candidateMap = {};
 
                 //Convert the array into a map with ids as keys.
                 for (var i = 0; i < data.length; i++) {
-                    candidateMap[data[i]._id] = data[i];
+                    _this.candidateMap[data[i]._id] = data[i];
                 }
-
-                _this.$cookieStore.put(_this.CANDIDATE_MAP_KEY, candidateMap);
             });
     } else {
         var defer = this.$q.defer();
@@ -44,12 +45,12 @@ UserSession.prototype.promiseToHaveCandidateMap = function() {
 UserSession.prototype.promiseToHaveQuestionList = function() {
     var _this = this;
 
-    if (this.$cookieStore.get(this.QUESTION_LIST_KEY) === undefined) {
-        //TODO: d handel the case where the http request fails. see this video for more info on how to do that:
+    if (this.questionList === null) {
+        //TODO: handel the case where the http request fails. see this video for more info on how to do that:
         // http://egghead.io/lessons/angularjs-resolve-routechangeerror
         return this.$http.get('/api/questions')
             .success(function(data) {
-                _this.$cookieStore.put(_this.QUESTION_LIST_KEY, data);
+                _this.questionList = data;
             });
     } else {
         var defer = this.$q.defer();
@@ -71,7 +72,7 @@ UserSession.prototype.promiseToHaveQuestionList = function() {
 }
 */
 UserSession.prototype.getCandidateMap = function() {
-    return this.$cookieStore.get(this.CANDIDATE_MAP_KEY);
+    return this.candidateMap;
 };
 
 
@@ -110,7 +111,7 @@ UserSession.prototype.getCandidateMap = function() {
 ]
 */
 UserSession.prototype.getQuestionList = function() {
-    return this.$cookieStore.get(this.QUESTION_LIST_KEY);
+    return this.questionList;
 };
 
 UserSession.prototype.getUserAnswers = function() {

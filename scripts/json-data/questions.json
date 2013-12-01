@@ -1,0 +1,50 @@
+[
+	{
+		"itemId": "2013.EX30.1",
+		"title": "Build a casino in downtown Toronto",
+		"dateTime": "May-21-2013 1:02 PM",
+		"agreeCandidates": [
+			"Mayor candidate4", "Councilor ward1-c4",
+			"Vincent Crisanti", "Doug Ford", "Rob Ford", "Doug Holyday", "Norman Kelly", "Giorgio Mammoliti"			
+		],
+		"disagreeCandidates": [
+			"Mayor candidate2", "Mayor candidate3", "Councilor ward1-c2", "Councilor ward1-c3",
+			"Paul Ainslie", "Maria Augimeri", "Ana Bailão", "Michelle Berardinetti", "Shelley Carroll", "Raymond Cho", "Josh Colle", "Gary Crawford", "Janet Davis", "Glenn De Baeremaeker", "Mike Del Grande", "Frank Di Giorgio", "Sarah Doucette", "John Filion", "Paula Fletcher", "Mary Fragedakis", "Mark Grimes", "Mike Layton", "Chin Lee", "Gloria Lindsay Luby", "Josh Matlow", "Pam McConnell", "Mary-Margaret McMahon", "Joe Mihevc", "Peter Milczyn", "Ron Moeser", "Frances Nunziata", "Cesar Palacio", "John Parker", "James Pasternak", "Gord Perks", "Anthony Perruzza", "Jaye Robinson", "David Shiner", "Karen Stintz", "Michael Thompson", "Adam Vaughan", "Kristyn Wong-Tam"
+		],
+		"absentCandidates": [
+			"Denzil Minnan-Wong"
+		]
+	},
+	{
+		"itemId": "2011.EX1.7",
+		"title": "Eliminate the annual $60 vehicle registration fee",
+		"dateTime": "Dec-16-2010 4:09 PM",
+		"agreeCandidates": [
+			"Mayor candidate2", "Councilor ward1-c2", "Councilor ward1-c4",
+			"Paul Ainslie", "Maria Augimeri", "Ana Bailão", "Michelle Berardinetti", "Shelley Carroll", "Raymond Cho", "Josh Colle", "Gary Crawford", "Vincent Crisanti", "Glenn De Baeremaeker", "Mike Del Grande", "Frank Di Giorgio", "John Filion", "Paula Fletcher", "Doug Ford", "Rob Ford", "Mary Fragedakis", "Mark Grimes", "Doug Holyday", "Norman Kelly", "Mike Layton", "Chin Lee", "Gloria Lindsay Luby", "Giorgio Mammoliti", "Josh Matlow", "Mary-Margaret McMahon", "Peter Milczyn", "Denzil Minnan-Wong", "Ron Moeser", "Frances Nunziata", "Cesar Palacio", "John Parker", "James Pasternak", "Anthony Perruzza", "Jaye Robinson", "David Shiner", "Karen Stintz", "Michael Thompson", "Kristyn Wong-Tam"
+		],
+		"disagreeCandidates": [
+			"Mayor candidate4", "Mayor candidate3", "Councilor ward1-c3",
+			"Janet Davis", "Sarah Doucette", "Pam McConnell", "Joe Mihevc", "Gord Perks", "Adam Vaughan"
+		],
+		"absentCandidates": [
+			
+		]
+	},
+	{
+		"itemId": "2011.PW3.1",
+		"title": "Allow private contractors to compete to provide residential garbage collection services",
+		"dateTime": "May-17-2011 7:03 PM",
+		"agreeCandidates": [
+			"Mayor candidate4", "Councilor ward1-c4", "Councilor ward1-c3",
+			"Paul Ainslie", "Ana Bailão", "Michelle Berardinetti", "Shelley Carroll", "Raymond Cho", "Josh Colle", "Gary Crawford", "Mike Del Grande", "Frank Di Giorgio", "John Filion", "Doug Ford", "Rob Ford", "Mark Grimes", "Doug Holyday", "Norman Kelly", "Chin Lee", "Gloria Lindsay Luby", "Giorgio Mammoliti", "Josh Matlow", "Mary-Margaret McMahon", "Peter Milczyn", "Denzil Minnan-Wong", "Ron Moeser", "Frances Nunziata", "Cesar Palacio", "John Parker", "James Pasternak", "Jaye Robinson", "David Shiner", "Karen Stintz", "Michael Thompson"
+		],
+		"disagreeCandidates": [
+			"Mayor candidate2", "Mayor candidate3", "Councilor ward1-c2",
+			"Maria Augimeri", "Janet Davis", "Glenn De Baeremaeker", "Sarah Doucette", "Paula Fletcher", "Mary Fragedakis", "Mike Layton", "Pam McConnell", "Joe Mihevc", "Gord Perks", "Anthony Perruzza", "Adam Vaughan", "Kristyn Wong-Tam"
+		],
+		"absentCandidates": [
+			"Vincent Crisanti"
+		]
+	}
+]

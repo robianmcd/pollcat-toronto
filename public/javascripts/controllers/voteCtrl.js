@@ -114,18 +114,26 @@ VoteCtrl.prototype.updateAnswerStateLists = function() {
     }
 
     var i;
+
+    //TODO: refactor this
     for (i = 0; i < this.activeQuestion.disagreeCandidates.length; i++) {
         curCandidateId = this.activeQuestion.disagreeCandidates[i];
-        this.disagreeList.push(this.candidateMap[curCandidateId].name);
+        if (this.candidateMap[curCandidateId] !== undefined) {
+            this.disagreeList.push(this.candidateMap[curCandidateId].name);
+        }
     }
 
     for (i = 0; i < this.activeQuestion.absentCandidates.length; i++) {
         curCandidateId = this.activeQuestion.absentCandidates[i];
-        this.skipList.push(this.candidateMap[curCandidateId].name);
+        if (this.candidateMap[curCandidateId] !== undefined) {
+            this.skipList.push(this.candidateMap[curCandidateId].name);
+        }
     }
 
     for (i = 0; i < this.activeQuestion.agreeCandidates.length; i++) {
         curCandidateId = this.activeQuestion.agreeCandidates[i];
-        this.agreeList.push(this.candidateMap[curCandidateId].name);
+        if (this.candidateMap[curCandidateId] !== undefined) {
+            this.agreeList.push(this.candidateMap[curCandidateId].name);
+        }
     }
 };

@@ -49,7 +49,11 @@ var ResultsCtrl = function($log, constants, userSession) {
 
         for (var i = 0; i < sameAnswerAsUserCandidatesList.length; i++) {
             var curCandidateId = sameAnswerAsUserCandidatesList[i];
-            candidateIdMap[curCandidateId].scoreSum++;
+            //TODO: This probably shouldn't be necessary. Maybe the server should only return candidates for the given ward instead of all of them.
+            if (candidateIdMap[curCandidateId] !== undefined) {
+                candidateIdMap[curCandidateId].scoreSum++;
+            }
+
         }
     }
 
