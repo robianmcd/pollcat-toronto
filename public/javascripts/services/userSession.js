@@ -133,7 +133,7 @@ UserSession.prototype.setUserAnswer = function(answerIndex, answer) {
 UserSession.prototype._getDefaultUserAnswers = function() {
     var userAnswers = [];
 
-    for(var i = 0; i < this.constants.NUM_QUESTIONS; i++) {
+    for(var i = 0; i < this.getQuestionList().length; i++) {
         userAnswers.push(this.constants.answerStateEnum.UNSET);
     }
 

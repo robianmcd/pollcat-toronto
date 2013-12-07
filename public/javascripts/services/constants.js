@@ -20,8 +20,6 @@ var Constants = function() {
         COUNCILOR: 1
     };
 
-    this.NUM_QUESTIONS = 20;
-
     this.primaryColor = {
         hue: 207,
         saturation: 67,

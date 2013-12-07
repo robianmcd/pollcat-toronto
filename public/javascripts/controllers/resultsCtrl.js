@@ -1,5 +1,6 @@
-var ResultsCtrl = function($log, constants, userSession) {
+var ResultsCtrl = function($log, $location, constants, userSession) {
     this.$log = $log;
+    this.$location = $location;
     this.constants = constants;
     this.userSession = userSession;
 
@@ -80,4 +81,8 @@ var ResultsCtrl = function($log, constants, userSession) {
         this.councilorList.sort(function(a,b) {return b.score - a.score;});
     }
 
+};
+
+ResultsCtrl.prototype.reviewVotes = function() {
+    this.$location.path('/vote/1');
 };

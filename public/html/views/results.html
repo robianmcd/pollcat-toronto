@@ -1,14 +1,43 @@
 <div active-nav-item="ctrl.activeNavItem" pc-header></div>
-<h1 class="text-center">Which candidates agreed with you?</h1>
+<h2 class="text-center">Which candidates agreed with you?</h2>
 <div class="row">
     <div class="col-sm-6">
-        <div candidate-results-chart chart-title="Candidates for Mayor" candidate-score-list="ctrl.mayorList"></div>
+        <div class="highlight-large" candidate-results-chart chart-title="Candidates for Mayor" candidate-score-list="ctrl.mayorList"></div>
     </div>
+    <!--Add some space between these columns when they are stacked-->
+    <div class="hidden-lg hidden-md hidden-sm">&nbsp;</div>
     <div class="col-sm-6">
-        <div candidate-results-chart chart-title="Candidates for Councilor" candidate-score-list="ctrl.councilorList"></div>
+        <div class="highlight-large" candidate-results-chart chart-title="Candidates for Councilor" candidate-score-list="ctrl.councilorList"></div>
     </div>
 </div>
 
-<h1 class="text-center">What to do next</h1>
+<div class="row">
+    <div class="col-sm-6 text-center">
+
+        <h3>
+            <i class="icon-check" style="font-size:300%"></i>
+            <br>
+            Review your votes
+        </h3>
+        <form class="center-form spaced-form">
+            <div>
+                Review how you voted and see how other candidates voted on each question.
+            </div>
+            <button type="button" ng-click="ctrl.reviewVotes()" class="btn btn-primary">
+                Review Votes
+            </button>
+        </form>
+    </div>
+
+    <div class="col-sm-6 text-center">
+        <h3>
+            <i class="icon-student-school" style="font-size:300%"></i>
+            <br>
+            Learn more
+        </h3>
+        Learn more about the election and where to vote at
+        <a href="http://www1.toronto.ca/wps/portal/contentonly?vgnextoid=d712c36902f5d310VgnVCM1000006cd60f89RCRD">The City of Toronto's Website</a>
+    </div>
+</div>
 
 <hr>

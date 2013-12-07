@@ -1,6 +1,4 @@
 .container .jumbotron {
-  box-shadow:5px 5px 8px black;
-
   margin-left: 0;
   margin-right: 0;
   padding-left: 0;
@@ -20,6 +18,11 @@ hr {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.highlight-large {
+  box-shadow:5px 5px 8px black;
+}
+
 
 .highlight {
   box-shadow:2px 2px 3px black;
