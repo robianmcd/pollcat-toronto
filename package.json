@@ -1,21 +1,21 @@
 {
-  "name": "pollcat-toronto",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node server.js",
-    "postinstall": "grunt prod"
-  },
-  "dependencies": {
-    "grunt": "~0.4.1",
-    "grunt-cli": "~0.1.9",
-    "express": "3.4.0",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-replace": "~0.5.1",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-compass": "~0.5.0",
-    "mongodb": "~1.3.19",
-    "newrelic": "~1.1.1",
-    "request": "~2.27.0"
-  }
+    "name": "pollcat-toronto",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start": "node server.js",
+        "postinstall": "grunt prod"
+    },
+    "dependencies": {
+        "grunt": "~0.4.1",
+        "grunt-cli": "~0.1.9",
+        "express": "3.4.0",
+        "grunt-contrib-concat": "~0.3.0",
+        "grunt-replace": "~0.5.1",
+        "grunt-contrib-watch": "~0.5.3",
+        "grunt-contrib-compass": "~0.5.0",
+        "mongodb": "~1.3.19",
+        "newrelic": "~1.1.1",
+        "request": "~2.27.0"
+    }
 }

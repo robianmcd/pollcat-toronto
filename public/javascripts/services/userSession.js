@@ -60,56 +60,56 @@ UserSession.prototype.promiseToHaveQuestionList = function() {
 };
 
 /*
-{
-    1: {name: 'Rob Ford', type: candidateTypeEnum.MAYOR},
-    4: {name: 'Erica Downes', type: candidateTypeEnum.MAYOR},
-    3: {name: 'Greg Davis', type: candidateTypeEnum.MAYOR},
-    7: {name: 'Chris Onysko', type: candidateTypeEnum.MAYOR},
-    13: {name: 'Sam Richards', type: candidateTypeEnum.COUNCILOR},
-    12: {name: 'Robin Loyd', type: candidateTypeEnum.COUNCILOR},
-    18: {name: 'Steve French', type: candidateTypeEnum.COUNCILOR},
-    9: {name: 'Lee Done', type: candidateTypeEnum.COUNCILOR}
-}
-*/
+ {
+ 1: {name: 'Rob Ford', type: candidateTypeEnum.MAYOR},
+ 4: {name: 'Erica Downes', type: candidateTypeEnum.MAYOR},
+ 3: {name: 'Greg Davis', type: candidateTypeEnum.MAYOR},
+ 7: {name: 'Chris Onysko', type: candidateTypeEnum.MAYOR},
+ 13: {name: 'Sam Richards', type: candidateTypeEnum.COUNCILOR},
+ 12: {name: 'Robin Loyd', type: candidateTypeEnum.COUNCILOR},
+ 18: {name: 'Steve French', type: candidateTypeEnum.COUNCILOR},
+ 9: {name: 'Lee Done', type: candidateTypeEnum.COUNCILOR}
+ }
+ */
 UserSession.prototype.getCandidateMap = function() {
     return this.candidateMap;
 };
 
 
 /*
-[
-    {
-        title: "Remove bike lanes from College St",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam",
-        agreeCandidates: [1, 4, 3, 9],
-        absentCandidates: [7, 13],
-        disagreeCandidates: [18, 12],
-        numAgree: 22,
-        numAbsent: 4,
-        numDisagree: 15
-    },
-    {
-        title: "Shark fin soup should be banned",
-        description: "Nulla quam velit. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam",
-        agreeCandidates: [1, 4, 3, 9, 18, 13],
-        absentCandidates: [12],
-        disagreeCandidates: [7],
-        numAgree: 36,
-        numAbsent: 2,
-        numDisagree: 7
-    },
-    {
-        title: "Remove bike lanes from College St",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam",
-        agreeCandidates: [1, 4, 3, 12],
-        absentCandidates: [7, 13],
-        disagreeCandidates: [18, 9],
-        numAgree: 22,
-        numAbsent: 4,
-        numDisagree: 15
-    }
-]
-*/
+ [
+ {
+ title: "Remove bike lanes from College St",
+ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam",
+ agreeCandidates: [1, 4, 3, 9],
+ absentCandidates: [7, 13],
+ disagreeCandidates: [18, 12],
+ numAgree: 22,
+ numAbsent: 4,
+ numDisagree: 15
+ },
+ {
+ title: "Shark fin soup should be banned",
+ description: "Nulla quam velit. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam",
+ agreeCandidates: [1, 4, 3, 9, 18, 13],
+ absentCandidates: [12],
+ disagreeCandidates: [7],
+ numAgree: 36,
+ numAbsent: 2,
+ numDisagree: 7
+ },
+ {
+ title: "Remove bike lanes from College St",
+ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam",
+ agreeCandidates: [1, 4, 3, 12],
+ absentCandidates: [7, 13],
+ disagreeCandidates: [18, 9],
+ numAgree: 22,
+ numAbsent: 4,
+ numDisagree: 15
+ }
+ ]
+ */
 UserSession.prototype.getQuestionList = function() {
     return this.questionList;
 };
@@ -133,7 +133,7 @@ UserSession.prototype.setUserAnswer = function(answerIndex, answer) {
 UserSession.prototype._getDefaultUserAnswers = function() {
     var userAnswers = [];
 
-    for(var i = 0; i < this.getQuestionList().length; i++) {
+    for (var i = 0; i < this.getQuestionList().length; i++) {
         userAnswers.push(this.constants.answerStateEnum.UNSET);
     }
 

@@ -10,7 +10,7 @@ var VoteCtrl = function(constants, $routeParams, $location, userSession) {
 
     this.questionNum = parseInt($routeParams.questionNum);
 
-    if ( !(this.questionNum >= 1 && this.questionNum <= this.questionList.length) ) {
+    if (!(this.questionNum >= 1 && this.questionNum <= this.questionList.length)) {
         this.$location.path('vote/1');
     }
 
@@ -20,7 +20,7 @@ var VoteCtrl = function(constants, $routeParams, $location, userSession) {
     for (var i = 0; i < this.questionList.length; i++) {
         this.pageList.push(
             {
-                pageNum: i+1,
+                pageNum: i + 1,
                 isActivePage: (this.questionIndex === i)
             });
     }
@@ -76,7 +76,7 @@ VoteCtrl.prototype.setAnswerState = function(newAnswerState) {
 };
 
 VoteCtrl.prototype.getHighlightAnswerButtonsClass = function() {
-    if(this.answerState === this.answerStateEnum.UNSET) {
+    if (this.answerState === this.answerStateEnum.UNSET) {
         return 'highlight';
     }
     else {
@@ -89,14 +89,14 @@ VoteCtrl.prototype.nextVotePage = function() {
         this.$location.path('results');
     }
     else {
-        this.$location.path('vote/' + (this.questionNum + 1) );
+        this.$location.path('vote/' + (this.questionNum + 1));
     }
 
 
 };
 
 VoteCtrl.prototype.previousVotePage = function() {
-    this.$location.path('vote/' + (this.questionNum - 1) );
+    this.$location.path('vote/' + (this.questionNum - 1));
 };
 
 VoteCtrl.prototype.gotoVotePage = function(pageNum) {

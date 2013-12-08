@@ -32,8 +32,7 @@ var ResultsCtrl = function($log, $location, constants, userSession) {
 
         var curQuestion = this.questionList[questionIndex];
         var sameAnswerAsUserCandidatesList;
-        switch(this.userAnswers[questionIndex])
-        {
+        switch (this.userAnswers[questionIndex]) {
             case this.answerStateEnum.UNSET:
             case this.answerStateEnum.SKIP:
                 continue;
@@ -77,8 +76,12 @@ var ResultsCtrl = function($log, $location, constants, userSession) {
             }
         }
 
-        this.mayorList.sort(function(a,b) {return b.score - a.score;});
-        this.councilorList.sort(function(a,b) {return b.score - a.score;});
+        this.mayorList.sort(function(a, b) {
+            return b.score - a.score;
+        });
+        this.councilorList.sort(function(a, b) {
+            return b.score - a.score;
+        });
     }
 
 };

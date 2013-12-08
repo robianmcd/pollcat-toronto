@@ -50,8 +50,6 @@ module.exports = function(grunt) {
     });
 
 
-
-
     grunt.registerTask('watchDev', ['watch']);
     grunt.registerTask('prod', ['replace']);
 

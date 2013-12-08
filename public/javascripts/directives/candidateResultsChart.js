@@ -3,8 +3,8 @@ var pollCatModule = angular.module('PollCatApp');
 pollCatModule.directive("candidateResultsChart", function(constants) {
     return {
         scope: {
-            chartTitle:'@',
-            candidateScoreList:'='
+            chartTitle: '@',
+            candidateScoreList: '='
         },
         link: function(scope, element) {
 
@@ -16,7 +16,7 @@ pollCatModule.directive("candidateResultsChart", function(constants) {
                 nameList[i] = curCandidateInfo.name;
 
                 curColor = tinycolor({
-                    h:constants.primaryColor.hue,
+                    h: constants.primaryColor.hue,
                     s: constants.primaryColor.saturation * curCandidateInfo.score,
                     v: constants.primaryColor.value
                 });
@@ -71,15 +71,17 @@ pollCatModule.directive("candidateResultsChart", function(constants) {
                                 fontWeight: 'bold'
                             },
                             formatter: function() {
-                                return this.y +'%';
+                                return this.y + '%';
                             }
                         }
                     }
                 },
-                series: [{
-                    name: "Percent of topics you agreed on",
-                    data: scoreData
-                }],
+                series: [
+                    {
+                        name: "Percent of topics you agreed on",
+                        data: scoreData
+                    }
+                ],
                 credits: {
                     enabled: false
                 }

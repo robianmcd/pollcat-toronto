@@ -2,30 +2,30 @@ var pollCatModule = angular.module('PollCatApp', ['ngRoute', 'ngCookies']);
 
 pollCatModule.config([
     '$routeProvider',
-    function (routeProvider) {
+    function(routeProvider) {
         routeProvider.when('/home', {
             templateUrl: '/html/views/home.html',
             controller: 'HomeCtrl as ctrl'
         })
-        .when('/vote/:questionNum', {
-            templateUrl: '/html/views/vote.html',
-            controller: 'VoteCtrl as ctrl',
-            resolve: {
-                loadCandidateData: loadCandidateData,
-                loadQuestionData: loadQuestionData
-            }
-        })
-        .when('/results', {
-            templateUrl: '/html/views/results.html',
-            controller: 'ResultsCtrl as ctrl',
-            resolve: {
-                loadCandidateData: loadCandidateData,
-                loadQuestionData: loadQuestionData
-            }
-        })
-        .otherwise({
-            redirectTo: '/home'
-        });
+            .when('/vote/:questionNum', {
+                templateUrl: '/html/views/vote.html',
+                controller: 'VoteCtrl as ctrl',
+                resolve: {
+                    loadCandidateData: loadCandidateData,
+                    loadQuestionData: loadQuestionData
+                }
+            })
+            .when('/results', {
+                templateUrl: '/html/views/results.html',
+                controller: 'ResultsCtrl as ctrl',
+                resolve: {
+                    loadCandidateData: loadCandidateData,
+                    loadQuestionData: loadQuestionData
+                }
+            })
+            .otherwise({
+                redirectTo: '/home'
+            });
     }
 ]);
 

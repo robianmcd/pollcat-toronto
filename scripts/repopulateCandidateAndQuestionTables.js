@@ -5,7 +5,7 @@ var request = require('request');
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
 
-MongoClient.connect('mongodb://pcadmin:pctoronto@paulo.mongohq.com:10023/app17991090', function (err, db) {
+MongoClient.connect('mongodb://pcadmin:pctoronto@paulo.mongohq.com:10023/app17991090', function(err, db) {
     db.collection('questions', function(err, questionCol) {
         db.collection('candidates', function(err, candidateCol) {
 

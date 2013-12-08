@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -47,14 +46,14 @@ server.get('/', function(req, res) {
     res.sendfile("public/indexCacheBusted.html");
 });
 
-server.get('/api/questions', function (req, res) {
+server.get('/api/questions', function(req, res) {
     res.header("Cache-Control", "max-age=0,no-cache,no-store");
-    questionDb.find().toArray(function (err, items) {
+    questionDb.find().toArray(function(err, items) {
         res.send(items);
     });
 });
 
-server.get('/api/candidates/:ward', function (req, res) {
+server.get('/api/candidates/:ward', function(req, res) {
     res.header("Cache-Control", "max-age=0,no-cache,no-store");
 
     //Find candidates that are from the specified ward or are running for mayor
@@ -63,12 +62,12 @@ server.get('/api/candidates/:ward', function (req, res) {
             {ward: parseInt(req.params.ward)},
             {type: 0}
         ]})
-        .toArray(function (err, items) {
+        .toArray(function(err, items) {
             res.send(items);
         });
 });
 
 //Start Server
-http.createServer(server).listen(server.get('port'), function(){
+http.createServer(server).listen(server.get('port'), function() {
     console.log('Express server listening on port ' + server.get('port'));
 });

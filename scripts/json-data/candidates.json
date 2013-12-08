@@ -1,60 +1,276 @@
 [
-    {"name": "Rob Ford", "type": 0},
-    {"name": "Doug Holyday", "type": 1, "ward": 0},
-    {"name": "Vincent Crisanti", "type": 1, "ward": 1},
-    {"name": "Doug Ford", "type": 1, "ward": 2},
-    {"name": "Peter Leon", "type": 1, "ward": 3},
-    {"name": "Gloria Lindsay Luby", "type": 1, "ward": 4},
-    {"name": "Peter Milczyn", "type": 1, "ward": 5},
-    {"name": "Mark Grimes", "type": 1, "ward": 6},
-    {"name": "Giorgio Mammoliti", "type": 1, "ward": 7},
-    {"name": "Anthony Perruzza", "type": 1, "ward": 8},
-    {"name": "Maria Augimeri", "type": 1, "ward": 9},
-    {"name": "James Pasternak", "type": 1, "ward": 10},
-    {"name": "Frances Nunziata", "type": 1, "ward": 11},
-    {"name": "Frank Di Giorgio", "type": 1, "ward": 12},
-    {"name": "Sarah Doucette", "type": 1, "ward": 13},
-    {"name": "Gord Perks", "type": 1, "ward": 14},
-    {"name": "Josh Colle", "type": 1, "ward": 15},
-    {"name": "Karen Stintz", "type": 1, "ward": 16},
-    {"name": "Cesar Palacio", "type": 1, "ward": 17},
-    {"name": "Ana Bailão", "type": 1, "ward": 18},
-    {"name": "Mike Layton", "type": 1, "ward": 19},
-    {"name": "Adam Vaughan", "type": 1, "ward": 20},
-    {"name": "Joe Mihevc", "type": 1, "ward": 21},
-    {"name": "Josh Matlow", "type": 1, "ward": 22},
-    {"name": "John Filion", "type": 1, "ward": 23},
-    {"name": "David Shiner", "type": 1, "ward": 24},
-    {"name": "Jaye Robinson", "type": 1, "ward": 25},
-    {"name": "John Parker", "type": 1, "ward": 26},
-    {"name": "Kristyn Wong-Tam", "type": 1, "ward": 27},
-    {"name": "Pam McConnell", "type": 1, "ward": 28},
-    {"name": "Mary Fragedakis", "type": 1, "ward": 29},
-    {"name": "Paula Fletcher", "type": 1, "ward": 30},
-    {"name": "Janet Davis", "type": 1, "ward": 31},
-    {"name": "Mary-Margaret McMahon", "type": 1, "ward": 32},
-    {"name": "Shelley Carroll", "type": 1, "ward": 33},
-    {"name": "Denzil Minnan-Wong", "type": 1, "ward": 34},
-    {"name": "Michelle Berardinetti", "type": 1, "ward": 35},
-    {"name": "Gary Crawford", "type": 1, "ward": 36},
-    {"name": "Michael Thompson", "type": 1, "ward": 37},
-    {"name": "Glenn De Baeremaeker", "type": 1, "ward": 38},
-    {"name": "Mike Del Grande", "type": 1, "ward": 39},
-    {"name": "Norman Kelly", "type": 1, "ward": 40},
-    {"name": "Chin Lee", "type": 1, "ward": 41},
-    {"name": "Raymond Cho", "type": 1, "ward": 42},
-    {"name": "Paul Ainslie", "type": 1, "ward": 43},
-    {"name": "Ron Moeser", "type": 1, "ward": 44},
+    {
+        "name": "Rob Ford",
+        "type": 0
+    },
+    {
+        "name": "Doug Holyday",
+        "type": 1,
+        "ward": 0
+    },
+    {
+        "name": "Vincent Crisanti",
+        "type": 1,
+        "ward": 1
+    },
+    {
+        "name": "Doug Ford",
+        "type": 1,
+        "ward": 2
+    },
+    {
+        "name": "Peter Leon",
+        "type": 1,
+        "ward": 3
+    },
+    {
+        "name": "Gloria Lindsay Luby",
+        "type": 1,
+        "ward": 4
+    },
+    {
+        "name": "Peter Milczyn",
+        "type": 1,
+        "ward": 5
+    },
+    {
+        "name": "Mark Grimes",
+        "type": 1,
+        "ward": 6
+    },
+    {
+        "name": "Giorgio Mammoliti",
+        "type": 1,
+        "ward": 7
+    },
+    {
+        "name": "Anthony Perruzza",
+        "type": 1,
+        "ward": 8
+    },
+    {
+        "name": "Maria Augimeri",
+        "type": 1,
+        "ward": 9
+    },
+    {
+        "name": "James Pasternak",
+        "type": 1,
+        "ward": 10
+    },
+    {
+        "name": "Frances Nunziata",
+        "type": 1,
+        "ward": 11
+    },
+    {
+        "name": "Frank Di Giorgio",
+        "type": 1,
+        "ward": 12
+    },
+    {
+        "name": "Sarah Doucette",
+        "type": 1,
+        "ward": 13
+    },
+    {
+        "name": "Gord Perks",
+        "type": 1,
+        "ward": 14
+    },
+    {
+        "name": "Josh Colle",
+        "type": 1,
+        "ward": 15
+    },
+    {
+        "name": "Karen Stintz",
+        "type": 1,
+        "ward": 16
+    },
+    {
+        "name": "Cesar Palacio",
+        "type": 1,
+        "ward": 17
+    },
+    {
+        "name": "Ana Bailão",
+        "type": 1,
+        "ward": 18
+    },
+    {
+        "name": "Mike Layton",
+        "type": 1,
+        "ward": 19
+    },
+    {
+        "name": "Adam Vaughan",
+        "type": 1,
+        "ward": 20
+    },
+    {
+        "name": "Joe Mihevc",
+        "type": 1,
+        "ward": 21
+    },
+    {
+        "name": "Josh Matlow",
+        "type": 1,
+        "ward": 22
+    },
+    {
+        "name": "John Filion",
+        "type": 1,
+        "ward": 23
+    },
+    {
+        "name": "David Shiner",
+        "type": 1,
+        "ward": 24
+    },
+    {
+        "name": "Jaye Robinson",
+        "type": 1,
+        "ward": 25
+    },
+    {
+        "name": "John Parker",
+        "type": 1,
+        "ward": 26
+    },
+    {
+        "name": "Kristyn Wong-Tam",
+        "type": 1,
+        "ward": 27
+    },
+    {
+        "name": "Pam McConnell",
+        "type": 1,
+        "ward": 28
+    },
+    {
+        "name": "Mary Fragedakis",
+        "type": 1,
+        "ward": 29
+    },
+    {
+        "name": "Paula Fletcher",
+        "type": 1,
+        "ward": 30
+    },
+    {
+        "name": "Janet Davis",
+        "type": 1,
+        "ward": 31
+    },
+    {
+        "name": "Mary-Margaret McMahon",
+        "type": 1,
+        "ward": 32
+    },
+    {
+        "name": "Shelley Carroll",
+        "type": 1,
+        "ward": 33
+    },
+    {
+        "name": "Denzil Minnan-Wong",
+        "type": 1,
+        "ward": 34
+    },
+    {
+        "name": "Michelle Berardinetti",
+        "type": 1,
+        "ward": 35
+    },
+    {
+        "name": "Gary Crawford",
+        "type": 1,
+        "ward": 36
+    },
+    {
+        "name": "Michael Thompson",
+        "type": 1,
+        "ward": 37
+    },
+    {
+        "name": "Glenn De Baeremaeker",
+        "type": 1,
+        "ward": 38
+    },
+    {
+        "name": "Mike Del Grande",
+        "type": 1,
+        "ward": 39
+    },
+    {
+        "name": "Norman Kelly",
+        "type": 1,
+        "ward": 40
+    },
+    {
+        "name": "Chin Lee",
+        "type": 1,
+        "ward": 41
+    },
+    {
+        "name": "Raymond Cho",
+        "type": 1,
+        "ward": 42
+    },
+    {
+        "name": "Paul Ainslie",
+        "type": 1,
+        "ward": 43
+    },
+    {
+        "name": "Ron Moeser",
+        "type": 1,
+        "ward": 44
+    },
 
 
-    {"name": "Mayor candidate2", "type": 0},
-    {"name": "Mayor candidate3", "type": 0},
-    {"name": "Mayor candidate4", "type": 0},
+    {
+        "name": "Mayor candidate2",
+        "type": 0
+    },
+    {
+        "name": "Mayor candidate3",
+        "type": 0
+    },
+    {
+        "name": "Mayor candidate4",
+        "type": 0
+    },
 
-    {"name": "Councilor ward1-c2", "type": 1, "ward": 1},
-    {"name": "Councilor ward1-c3", "type": 1, "ward": 1},
-    {"name": "Councilor ward1-c4", "type": 1, "ward": 1},
-    {"name": "Councilor ward2-c2", "type": 1, "ward": 2},
-    {"name": "Councilor ward2-c3", "type": 1, "ward": 2},
-    {"name": "Councilor ward2-c4", "type": 1, "ward": 2}
+    {
+        "name": "Councilor ward1-c2",
+        "type": 1,
+        "ward": 1
+    },
+    {
+        "name": "Councilor ward1-c3",
+        "type": 1,
+        "ward": 1
+    },
+    {
+        "name": "Councilor ward1-c4",
+        "type": 1,
+        "ward": 1
+    },
+    {
+        "name": "Councilor ward2-c2",
+        "type": 1,
+        "ward": 2
+    },
+    {
+        "name": "Councilor ward2-c3",
+        "type": 1,
+        "ward": 2
+    },
+    {
+        "name": "Councilor ward2-c4",
+        "type": 1,
+        "ward": 2
+    }
 ]

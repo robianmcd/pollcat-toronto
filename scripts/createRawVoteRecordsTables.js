@@ -6,7 +6,7 @@ var MongoClient = mongodb.MongoClient;
 var questionDb;
 var candidateDb;
 
-MongoClient.connect('mongodb://pcadmin:pctoronto@paulo.mongohq.com:10023/app17991090', function (err, db) {
+MongoClient.connect('mongodb://pcadmin:pctoronto@paulo.mongohq.com:10023/app17991090', function(err, db) {
     questionDb = db.collection('questions');
     candidateDb = db.collection('candidates');
 });
@@ -88,7 +88,7 @@ candidatesSmall.forEach(function(candidate) {
                 toDate: ""
             }
         },
-        function (error, response, body) {
+        function(error, response, body) {
             if (!error && response.statusCode == 200) {
                 //console.log(body);
 

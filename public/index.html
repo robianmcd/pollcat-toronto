@@ -13,51 +13,43 @@
     <link rel="stylesheet" href="stylesheets/css/allStyles.css?@@hash">
 </head>
 <body>
-    <div class="container">
-        <ng-view></ng-view>
-    </div>
+<div class="container">
+    <ng-view></ng-view>
+</div>
 
-    <!--Google Analytics-->
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<!--Google Analytics-->
+<script src="javascripts/lib/googleAnalytics.js"></script>
 
-        ga('create', 'UA-45725921-1', 'pollcat-toronto.herokuapp.com');
-        ga('send', 'pageview');
-    </script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
+<!--Twitter Bootstrap-->
+<script src="lib/bootstrap/js/bootstrap.js?@@hash"></script>
 
-    <!--Twitter Bootstrap-->
-    <script src="lib/bootstrap/js/bootstrap.js?@@hash"></script>
+<!--High Charts. Take off the '.src' for the minified version-->
+<script src="http://code.highcharts.com/highcharts.src.js"></script>
 
-    <!--High Charts. Take off the '.src' for the minified version-->
-    <script src="http://code.highcharts.com/highcharts.src.js"></script>
+<script src="javascripts/lib/tinycolor.js?v0.9.16"></script>
 
-    <script src="javascripts/lib/tinycolor.js?v0.9.16"></script>
+<!--AngularJS-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
+<script src="javascripts/lib/angular-1.2.0/angular-route.js"></script>
+<script src="javascripts/lib/angular-1.2.0/angular-cookies.js"></script>
 
-    <!--AngularJS-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
-    <script src="javascripts/lib/angular-1.2.0/angular-route.js"></script>
-    <script src="javascripts/lib/angular-1.2.0/angular-cookies.js"></script>
+<!--*****PollCat******-->
+<!--Controllers-->
+<script src="javascripts/pollCatApp.js?@@hash"></script>
+<script src="javascripts/controllers/homeCtrl.js?@@hash"></script>
+<script src="javascripts/controllers/voteCtrl.js?@@hash"></script>
+<script src="javascripts/controllers/resultsCtrl.js?@@hash"></script>
 
-    <!--*****PollCat******-->
-    <!--Controllers-->
-    <script src="javascripts/pollCatApp.js?@@hash"></script>
-    <script src="javascripts/controllers/homeCtrl.js?@@hash"></script>
-    <script src="javascripts/controllers/voteCtrl.js?@@hash"></script>
-    <script src="javascripts/controllers/resultsCtrl.js?@@hash"></script>
+<!--Directives-->
+<script src="javascripts/directives/pcHeader.js?@@hash"></script>
+<script src="javascripts/directives/listPanel.js?@@hash"></script>
+<script src="javascripts/directives/candidateResultsChart.js?@@hash"></script>
 
-    <!--Directives-->
-    <script src="javascripts/directives/pcHeader.js?@@hash"></script>
-    <script src="javascripts/directives/listPanel.js?@@hash"></script>
-    <script src="javascripts/directives/candidateResultsChart.js?@@hash"></script>
-
-    <!--Services-->
-    <script src="javascripts/services/constants.js?@@hash"></script>
-    <script src="javascripts/services/userSession.js?@@hash"></script>
+<!--Services-->
+<script src="javascripts/services/constants.js?@@hash"></script>
+<script src="javascripts/services/userSession.js?@@hash"></script>
 
 </body>
 </html>

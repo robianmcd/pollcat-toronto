@@ -1,5 +1,7 @@
 var pollCatModule = angular.module('PollCatApp');
-pollCatModule.factory('constants', function() {return new Constants();});
+pollCatModule.factory('constants', function() {
+    return new Constants();
+});
 
 var Constants = function() {
     this.navItemEnum = {
