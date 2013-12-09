@@ -5,9 +5,9 @@ pollCatModule.factory('constants', function() {
 
 var Constants = function() {
     this.navItemEnum = {
-        HOME: 0,
-        VOTE: 1,
-        RESULTS: 2
+        HOME: 'home',
+        VOTE: 'vote',
+        RESULTS: 'results'
     };
 
     this.answerStateEnum = {
@@ -27,5 +27,7 @@ var Constants = function() {
         saturation: 67,
         value: 79,
         hex: "#428BCA"
-    }
+    };
+
+    this.pollCatProdUrl = 'http://pollcat-toronto.herokuapp.com/';
 };

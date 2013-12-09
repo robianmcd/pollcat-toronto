@@ -4,7 +4,6 @@ var ResultsCtrl = function($log, $location, constants, userSession) {
     this.constants = constants;
     this.userSession = userSession;
 
-    this.activeNavItem = constants.navItemEnum.RESULTS;
     this.candidateTypeEnum = constants.candidateTypeEnum;
     this.answerStateEnum = constants.answerStateEnum;
 

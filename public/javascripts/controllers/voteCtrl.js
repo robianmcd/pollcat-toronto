@@ -25,8 +25,6 @@ var VoteCtrl = function(constants, $routeParams, $location, userSession) {
             });
     }
 
-    this.activeNavItem = this.constants.navItemEnum.VOTE;
-
     this.answerStateEnum = this.constants.answerStateEnum;
     this.candidateTypeEnum = this.constants.candidateTypeEnum;
 

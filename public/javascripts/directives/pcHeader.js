@@ -11,11 +11,13 @@ pollCatModule.directive("pcHeader", function() {
     };
 });
 
-var PcHeaderCtrl = function($scope, constants) {
+var PcHeaderCtrl = function($scope, $location, constants) {
+
     this.navItemEnum = constants.navItemEnum;
+    this.pollCatProdUrl = constants.pollCatProdUrl;
 
     this.getActiveClass = function(navItem) {
-        if (navItem === $scope.activeNavItem) {
+        if (navItem === $location.path().split('/')[1]) {
             return 'active';
         }
         else {
