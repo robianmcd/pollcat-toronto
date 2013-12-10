@@ -1,19 +1,16 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" ng-app="PollCatApp" itemscope itemtype="http://schema.org/Product">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" ng-app="PollCatApp">
 <head>
     <meta charset="utf-8"/>
     <!--To ensure proper rendering and touch zooming -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
-    <meta property="og:title" content="Test title" />
-    <!--<meta property="og:image" content="..." />-->
-    <meta property="og:description" content="This is a test description" />
-
-    <!-- Add the following three tags inside head. -->
-    <meta itemprop="name" content="Make Toronto Great with PollCat">
-    <meta itemprop="description" content="sample description">
-    <meta itemprop="image" content="images/poll-cat-img-logo.png">
+    <!--These tags are used to populate the google+ post-->
+    <meta property="og:title" content="Make your Toronto great!"/>
+    <meta property="og:image" content="/images/poll-cat-img-logo.png"/>
+    <meta property="og:description" content="Learn who would best represent you in the upcoming Toronto election."/>
+    <meta name="description" content="Learn who would best represent you in the upcoming Toronto election."/>
 
     <title>PollCat Toronto</title>
 
@@ -22,7 +19,7 @@
 
     <link rel="stylesheet" href="stylesheets/css/allStyles.css?@@hash">
 </head>
-<body>
+<body itemscope itemtype="http://schema.org/Product">
 
 <div class="container">
     <div active-nav-item="ctrl.activeNavItem" pc-header></div>
