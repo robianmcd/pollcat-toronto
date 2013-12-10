@@ -1,0 +1,30 @@
+@import '../modules/allModules';
+
+.slide-animate-container {
+  position: relative;
+}
+
+.slide-animate {
+  position: absolute;
+  width: 100%;
+}
+
+.slide-animate.ng-enter, .slide-animate.ng-leave {
+  transition: 500ms ease all;
+
+}
+
+.slide-animate.ng-enter {
+  opacity: 0;
+  left: 700px;
+}
+
+.slide-animate.ng-enter.ng-enter-active, .slide-animate.ng-leave {
+  left: 0px;
+  opacity: .9;
+}
+
+.slide-animate.ng-leave.ng-leave-active {
+  left: -700px;
+  opacity: 0;
+}
