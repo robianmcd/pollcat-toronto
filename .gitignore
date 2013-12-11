@@ -3,3 +3,4 @@
 /.idea/tasks.xml
 /.idea/dictionaries
 /public/indexCacheBusted.html
+/newrelic_agent.log

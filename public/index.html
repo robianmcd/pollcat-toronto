@@ -20,9 +20,20 @@
 </head>
 <body>
 
-<div class="container slide-animate-container">
+<div class="container">
     <div active-nav-item="ctrl.activeNavItem" pc-header></div>
-    <ng-view class="slide-animate"></ng-view>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="slide-animate-container">
+                <ng-view class="slide-animate"></ng-view>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <hr>
+        </div>
+    </div>
 </div>
 
 <!--Google Analytics-->
