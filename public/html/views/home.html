@@ -33,8 +33,9 @@
             <h2 class="text-center">Get Started</h2>
 
             <div class="form-group">
-                <label for="postalCodeInput">Enter your postal code:</label>
-                <input type="text" class="form-control highlight" id="postalCodeInput" placeholder="e.g. M5R 2S4">
+                <label for="postalCodeInput">Enter your Toronto Street Address:</label>
+                <input type="text" class="form-control highlight" id="postalCodeInput" placeholder="e.g. 123 Yonge st."
+                       ng-model="ctrl.streetAddress">
                 <button type="submit" class="btn btn-primary highlight" ng-click="ctrl.startVoting()">
                     <span class="glyphicon glyphicon-ok-circle"></span>
                     Start Voting
