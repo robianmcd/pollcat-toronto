@@ -1,5 +1,5 @@
 var pollCatModule = angular.module('PollCatApp');
-pollCatModule.service('voteCaWardFinder', function($filter) {
+pollCatModule.service('voteCaWardFinder', function($filter, $rootScope) {
     var _this = this;
 
     //These latitude and longitude are approximate values that should bound the city of toronto.
@@ -27,13 +27,24 @@ pollCatModule.service('voteCaWardFinder', function($filter) {
                 console.log(status);
 
                 //Filters out records that are not street addresses or are not in the toronto Bounds
-                var matchingAddresses = $filter('filter')(results, function(match) {
+                var matchingGoogleMapsAddresses = $filter('filter')(results, function(match) {
                     var curLocation = new google.maps.LatLng(match.geometry.location.nb, match.geometry.location.ob);
 
-                    return $.inArray(match.types, 'street_address') && _this.torontoBounds.contains(curLocation);
+                    return ($.inArray('street_address', match.types) !== -1) &&
+                        _this.torontoBounds.contains(curLocation);
                 });
 
+                var matchingAddresses = $.map(matchingGoogleMapsAddresses, function(address) {
+                    return {
+                        formattedAddress: address.formatted_address,
+                        lat: address.geometry.location.nb,
+                        long: address.geometry.location.ob
+                    };
+                });
+
+
                 callback(matchingAddresses);
+                $rootScope.$apply();
 
                 console.log(matchingAddresses);
             });

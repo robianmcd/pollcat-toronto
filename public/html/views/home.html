@@ -29,18 +29,43 @@
 
 <div class="row">
     <div class="col-sm-12">
-        <form class="spaced-form center-form">
-            <h2 class="text-center">Get Started</h2>
 
+        <h2 class="text-center">Get Started</h2>
+
+        <form class="spaced-form">
             <div class="form-group">
-                <label for="postalCodeInput">Enter your Toronto Street Address:</label>
-                <input type="text" class="form-control highlight" id="postalCodeInput" placeholder="e.g. 123 Yonge st."
-                       ng-model="ctrl.streetAddress">
-                <button type="submit" class="btn btn-primary highlight" ng-click="ctrl.startVoting()">
-                    <span class="glyphicon glyphicon-ok-circle"></span>
-                    Start Voting
-                </button>
 
+                <div ng-show="ctrl.addressEntryState === ctrl.addressEntryEnum.ENTER">
+                    <label for="postalCodeInput">Enter your Toronto Street Address:</label>
+                    <input type="text" class="form-control highlight" id="postalCodeInput"
+                           placeholder="e.g. 123 Yonge st."
+                           ng-model="ctrl.streetAddressInput">
+                    <button type="submit" class="btn btn-primary highlight" ng-click="ctrl.startVoting()">
+                        <span class="glyphicon glyphicon-ok-circle"></span>
+                        Start Voting
+                    </button>
+                </div>
+
+                <div ng-show="ctrl.addressEntryState === ctrl.addressEntryEnum.VERIFY">
+                    <label>Please select your address</label>
+
+                    <div ng-repeat="address in ctrl.matchingStreetAddresses" class="radio">
+                        <label>
+                            <input type="radio" name="Matching street address" ng-click="ctrl.goToWardInfo(address)">
+                            {{address.formattedAddress}}
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="Matching street address">
+                            Enter a new address.
+                        </label>
+                    </div>
+                </div>
+
+                <div ng-show="ctrl.addressEntryState === ctrl.addressEntryEnum.LOADING_WARD">
+                    <div>Loading ward info...</div>
+                </div>
             </div>
         </form>
 
