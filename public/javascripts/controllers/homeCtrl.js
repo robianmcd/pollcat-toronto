@@ -1,5 +1,6 @@
-var HomeCtrl = function($location, constants, voteCaWardFinder) {
+var HomeCtrl = function($location, $filter, constants, voteCaWardFinder) {
     this.$location = $location;
+    this.$filter = $filter;
     this.voteCaWardFinder = voteCaWardFinder;
 
     this.addressEntryEnum = {
@@ -25,5 +26,10 @@ HomeCtrl.prototype.startVoting = function() {
 
 HomeCtrl.prototype.goToWardInfo = function(address) {
     this.addressEntryState = this.addressEntryEnum.LOADING_WARD;
-    this.$location.path('/vote/1');
+
+    this.voteCaWardFinder.getWardInfo(address.lat, address.lng, function(wardInfo) {
+        console.log(wardInfo);
+        //_this.$location.path('/vote/1');
+    });
+
 };

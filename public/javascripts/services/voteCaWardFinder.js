@@ -1,5 +1,5 @@
 var pollCatModule = angular.module('PollCatApp');
-pollCatModule.service('voteCaWardFinder', function($filter, $rootScope) {
+pollCatModule.service('voteCaWardFinder', function($filter, $rootScope, $http) {
     var _this = this;
 
     //These latitude and longitude are approximate values that should bound the city of toronto.
@@ -23,9 +23,6 @@ pollCatModule.service('voteCaWardFinder', function($filter, $rootScope) {
         geocoder.geocode(
             {'address': streetAddress, 'region': 'CA', bounds: this.torontoBounds},
             function(results, status) {
-                console.log(results);
-                console.log(status);
-
                 //Filters out records that are not street addresses or are not in the toronto Bounds
                 var matchingGoogleMapsAddresses = $filter('filter')(results, function(match) {
                     var curLocation = new google.maps.LatLng(match.geometry.location.nb, match.geometry.location.ob);
@@ -38,17 +35,30 @@ pollCatModule.service('voteCaWardFinder', function($filter, $rootScope) {
                     return {
                         formattedAddress: address.formatted_address,
                         lat: address.geometry.location.nb,
-                        long: address.geometry.location.ob
+                        lng: address.geometry.location.ob
                     };
                 });
 
-
                 callback(matchingAddresses);
                 $rootScope.$apply();
-
-                console.log(matchingAddresses);
             });
+    };
 
+    this.getWardInfo = function(lat, lng, callback) {
+        $http.jsonp('http://api.vote.ca/api/beta/districts?lat=' + lat + '&lng=' + lng + '&callback=JSON_CALLBACK')
+            .success(function(data) {
+                var municipalWardInfoList = $filter('filter')(data, function(wardInfo) {
+                    return wardInfo.electoral_group.level.toLowerCase() === "municipal";
+                });
 
-    }
+                //There should only ever be 1 record for municipal ward info.
+                var municipalWardInfo = municipalWardInfoList[0];
+
+                callback({
+                    ward: municipalWardInfo.source_id,
+                    name: municipalWardInfo.name
+                });
+            });
+    };
+
 });
