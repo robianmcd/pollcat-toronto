@@ -21,11 +21,19 @@ var UserSession = function($cookieStore, $log, $q, $http, constants) {
 
 UserSession.prototype.promiseToHaveCandidateMap = function() {
     var _this = this;
+    var defer;
 
     if (this.candidateMap === null) {
         //TODO: get ward from cookie?
+        var ward = this.getWard();
 
-        return this.$http.get('/api/candidates/1')
+        if (ward === undefined) {
+            defer = this.$q.defer();
+            defer.reject();
+            return defer.promise;
+        }
+
+        return this.$http.get('/api/candidates/' + ward)
             .success(function(data) {
                 _this.candidateMap = {};
 
@@ -35,7 +43,7 @@ UserSession.prototype.promiseToHaveCandidateMap = function() {
                 }
             });
     } else {
-        var defer = this.$q.defer();
+        defer = this.$q.defer();
         defer.resolve();
         return defer.promise;
     }
