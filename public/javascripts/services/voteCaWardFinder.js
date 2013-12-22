@@ -55,7 +55,7 @@ pollCatModule.service('voteCaWardFinder', function($filter, $rootScope, $http) {
                 var municipalWardInfo = municipalWardInfoList[0];
 
                 callback({
-                    ward: municipalWardInfo.source_id,
+                    ward: parseInt(municipalWardInfo.source_id, 10),
                     name: municipalWardInfo.name
                 });
             });

@@ -3,10 +3,15 @@ var pollCatModule = angular.module('PollCatApp', ['ngRoute', 'ngCookies']);
 pollCatModule.config([
     '$routeProvider',
     function(routeProvider) {
-        routeProvider.when('/home', {
-            templateUrl: '/html/views/home.html',
-            controller: 'HomeCtrl as ctrl'
-        })
+        routeProvider
+            .when('/home', {
+                templateUrl: '/html/views/home.html',
+                controller: 'HomeCtrl as ctrl'
+            })
+            .when('/ward/:address', {
+                templateUrl: '/html/views/ward.html',
+                controller: 'WardCtrl as ctrl'
+            })
             .when('/vote/:questionNum', {
                 templateUrl: '/html/views/vote.html',
                 controller: 'VoteCtrl as ctrl',

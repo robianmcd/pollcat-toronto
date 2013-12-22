@@ -5,9 +5,9 @@ pollCatModule.factory('constants', function() {
 
 var Constants = function() {
     this.navItemEnum = {
-        HOME: 'home',
-        VOTE: 'vote',
-        RESULTS: 'results'
+        HOME: ['home'],
+        VOTE: ['vote', 'ward'],
+        RESULTS: ['results']
     };
 
     this.answerStateEnum = {

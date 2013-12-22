@@ -16,8 +16,10 @@ var PcHeaderCtrl = function($scope, $location, constants) {
     this.navItemEnum = constants.navItemEnum;
     this.pollCatProdUrl = constants.pollCatProdUrl;
 
-    this.getActiveClass = function(navItem) {
-        if (navItem === $location.path().split('/')[1]) {
+    this.getActiveClass = function(pagesForNavItem) {
+        var pageName = $location.path().split('/')[1];
+
+        if ($.inArray(pageName, pagesForNavItem) !== -1) {
             return 'active';
         }
         else {

@@ -5,7 +5,7 @@
   border-color: #cccccc;
 }
 
-/* line 11, ../sass/partials/_button.scss */
+/* line 12, ../sass/partials/_button.scss */
 .btn-white:hover,
 .btn-white:active,
 .btn-white.active,
@@ -15,14 +15,14 @@
   border-color: #adadad;
 }
 
-/* line 17, ../sass/partials/_button.scss */
+/* line 18, ../sass/partials/_button.scss */
 .btn-light-grey {
   color: #333333;
   background-color: #ebebeb;
   border-color: #adadad;
 }
 
-/* line 25, ../sass/partials/_button.scss */
+/* line 27, ../sass/partials/_button.scss */
 .btn-light-grey:hover,
 .btn-light-grey:active,
 .btn-light-grey.active,
@@ -32,19 +32,19 @@
   border-color: #adadad;
 }
 
-/* line 31, ../sass/partials/_button.scss */
+/* line 33, ../sass/partials/_button.scss */
 .btn-grey {
   color: #333333;
   background-color: #cccccc;
   border-color: #adadad;
 }
 
-/* line 37, ../sass/partials/_button.scss */
+/* line 39, ../sass/partials/_button.scss */
 .btn-group-fixed-width-lg button.btn {
   width: 120px;
 }
 
-/* line 41, ../sass/partials/_button.scss */
+/* line 43, ../sass/partials/_button.scss */
 .btn-group-xs > .btn {
   padding: 4px 8px;
   font-size: 10px;
@@ -52,7 +52,7 @@
   border-radius: 3px;
 }
 
-/* line 48, ../sass/partials/_button.scss */
+/* line 50, ../sass/partials/_button.scss */
 .btn-group-fixed-width-xs button.btn {
   width: 26px;
 }
@@ -80,12 +80,6 @@ form.center-form button {
   margin-left: auto;
   margin-right: auto;
   display: block;
-}
-
-/* line 26, ../sass/partials/_form.scss */
-form.spaced-form button, form.spaced-form input {
-  margin-top: 7px;
-  margin-bottom: 7px;
 }
 
 /* line 1, ../sass/partials/_header.scss */
@@ -121,12 +115,12 @@ hr {
   box-shadow: 5px 5px 8px black;
 }
 
-/* line 27, ../sass/partials/_page.scss */
+/* line 26, ../sass/partials/_page.scss */
 .highlight {
   box-shadow: 2px 2px 3px black;
 }
 
-/* line 31, ../sass/partials/_page.scss */
+/* line 30, ../sass/partials/_page.scss */
 div.center-block-md {
   margin-left: auto;
   margin-right: auto;
@@ -134,7 +128,7 @@ div.center-block-md {
   width: 265px;
 }
 
-/* line 38, ../sass/partials/_page.scss */
+/* line 37, ../sass/partials/_page.scss */
 div.center-block-lg {
   margin-left: auto;
   margin-right: auto;
@@ -142,24 +136,24 @@ div.center-block-lg {
   width: 550px;
 }
 
-/* line 45, ../sass/partials/_page.scss */
+/* line 44, ../sass/partials/_page.scss */
 .round-block {
   border-radius: 6px 6px 6px 6px;
 }
 
-/* line 49, ../sass/partials/_page.scss */
+/* line 48, ../sass/partials/_page.scss */
 div.section {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-/* line 54, ../sass/partials/_page.scss */
+/* line 53, ../sass/partials/_page.scss */
 div.vertical-space {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-/* line 59, ../sass/partials/_page.scss */
+/* line 58, ../sass/partials/_page.scss */
 div.vertical-space-lg {
   padding-top: 20px;
   padding-bottom: 20px;

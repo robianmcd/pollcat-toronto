@@ -11,8 +11,7 @@ var UserSession = function($cookieStore, $log, $q, $http, constants) {
     this.$http = $http;
 
     this.USER_ANSWERS_KEY = 'userAnswers';
-    this.QUESTION_LIST_KEY = 'questionList';
-    this.CANDIDATE_MAP_KEY = 'candidateMap';
+    this.WARD_KEY = 'ward';
     this.candidateTypeEnum = this.constants.candidateTypeEnum;
 
 
@@ -138,4 +137,13 @@ UserSession.prototype._getDefaultUserAnswers = function() {
     }
 
     return userAnswers;
+};
+
+UserSession.prototype.setWard = function(wardNum) {
+    this.$cookieStore.put(this.WARD_KEY, wardNum);
+};
+
+//Returns undefined if the ward hasn't been set
+UserSession.prototype.getWard = function() {
+    return this.$cookieStore.get(this.WARD_KEY);
 };
