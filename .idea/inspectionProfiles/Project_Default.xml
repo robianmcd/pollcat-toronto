@@ -6,7 +6,7 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="12">
+          <list size="13">
             <item index="0" class="java.lang.String" itemvalue="activenavitem" />
             <item index="1" class="java.lang.String" itemvalue="pc-header" />
             <item index="2" class="java.lang.String" itemvalue="active-nav-item" />
@@ -19,6 +19,7 @@
             <item index="9" class="java.lang.String" itemvalue="candidate-score-list" />
             <item index="10" class="java.lang.String" itemvalue="property" />
             <item index="11" class="java.lang.String" itemvalue="ng-controller" />
+            <item index="12" class="java.lang.String" itemvalue="ng-click" />
           </list>
         </value>
       </option>

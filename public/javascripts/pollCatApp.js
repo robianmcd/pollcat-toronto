@@ -10,7 +10,10 @@ pollCatModule.config([
             })
             .when('/ward', {
                 templateUrl: '/html/views/ward.html',
-                controller: 'WardCtrl as ctrl'
+                controller: 'WardCtrl as ctrl',
+                resolve: {
+                    loadCandidateData: loadCandidateData
+                }
             })
             .when('/vote/:questionNum', {
                 templateUrl: '/html/views/vote.html',

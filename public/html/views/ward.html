@@ -1,9 +1,24 @@
 <h2 class="text-center">Ward Info</h2>
+<h4 class="text-center">{{ctrl.address}}</h4>
 
-<div>Your address: {{ctrl.address}}</div>
-<div>Your Ward: {{ctrl.wardNum}}</div>
+<p>You live in <a target="_blank" href="http://www.toronto.ca/wards2000/ward{{ctrl.wardNum}}.htm"><strong>{{ctrl.wardName}}</strong></a>. The following candidates are running for election in your ward.</p>
 
-<button type="submit" class="btn btn-primary highlight" ng-click="ctrl.startVoting()">
-    <span class="glyphicon glyphicon-ok-circle"></span>
-    Start Voting
-</button>
+<div class="row">
+    <div class="col-sm-6">
+        <div panel-title="Candidates for Mayor" list="ctrl.candidateNamesForMayor" list-panel></div>
+    </div>
+    <div class="col-sm-6">
+        <div panel-title="Candidates for Councilor" list="ctrl.candidateNamesForCouncilor" list-panel></div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12 btn-group btn-group-lg btn-group-fixed-width-lg">
+        <button type="button" ng-click="ctrl.previous()" class="btn btn-light-grey pull-left">
+            <span class="glyphicon glyphicon-arrow-left"></span> Previous
+        </button>
+        <button type="submit" ng-click="ctrl.next()" class="btn btn-primary pull-right highlight">
+            Next <span class="glyphicon glyphicon-arrow-right"></span>
+        </button>
+    </div>
+</div>

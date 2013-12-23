@@ -130,6 +130,10 @@ UserSession.prototype.getUserAnswers = function() {
     return userAnswers;
 };
 
+UserSession.prototype.deleteUserAnswers = function() {
+    return this.$cookieStore.remove(this.USER_ANSWERS_KEY);
+};
+
 UserSession.prototype.setUserAnswer = function(answerIndex, answer) {
     var userAnswers = this.getUserAnswers();
     userAnswers[answerIndex] = answer;
