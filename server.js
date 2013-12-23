@@ -60,7 +60,10 @@ server.get('/api/candidates/:ward', function(req, res) {
     candidateDb.find(
         {$or: [
             {ward: parseInt(req.params.ward)},
-            {type: 0}
+            {type: 0},
+            //TODO: There are some temporary sample candidates for councilor so that each ward has some candidates.
+            //These should be removed when there is real data.
+            {sample: true}
         ]})
         .toArray(function(err, items) {
             res.send(items);

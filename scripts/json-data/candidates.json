@@ -244,33 +244,21 @@
     },
 
     {
-        "name": "Councilor ward1-c2",
+        "name": "Sample Councilor2",
         "type": 1,
-        "ward": 1
+        "ward": 1,
+        "sample": true
     },
     {
-        "name": "Councilor ward1-c3",
+        "name": "Sample Councilor3",
         "type": 1,
-        "ward": 1
+        "ward": 1,
+        "sample": true
     },
     {
-        "name": "Councilor ward1-c4",
+        "name": "Sample Councilor4",
         "type": 1,
-        "ward": 1
-    },
-    {
-        "name": "Councilor ward2-c2",
-        "type": 1,
-        "ward": 2
-    },
-    {
-        "name": "Councilor ward2-c3",
-        "type": 1,
-        "ward": 2
-    },
-    {
-        "name": "Councilor ward2-c4",
-        "type": 1,
-        "ward": 2
+        "ward": 1,
+        "sample": true
     }
 ]
