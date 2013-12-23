@@ -1,9 +1,10 @@
 var WardCtrl = function($routeParams, $location, userSession) {
     this.$location = $location;
-    this.address = $routeParams.address;
-    this.wardNum = userSession.getWard();
+    this.address = $location.search().address;
+    this.wardNum = $location.search().wardName;
 
-    if (this.wardNum === undefined) {
+    //Redirect to home page if the ward cookie is missing.
+    if (userSession.getWard() === undefined) {
         this.$location.path('/home');
     }
 };

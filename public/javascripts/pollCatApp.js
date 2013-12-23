@@ -8,7 +8,7 @@ pollCatModule.config([
                 templateUrl: '/html/views/home.html',
                 controller: 'HomeCtrl as ctrl'
             })
-            .when('/ward/:address', {
+            .when('/ward', {
                 templateUrl: '/html/views/ward.html',
                 controller: 'WardCtrl as ctrl'
             })

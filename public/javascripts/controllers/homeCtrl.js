@@ -42,7 +42,7 @@ HomeCtrl.prototype.goToWardInfo = function(address) {
 
     this.voteCaWardFinder.getWardInfo(address.lat, address.lng, function(wardInfo) {
         _this.userSession.setWard(wardInfo.ward);
-        _this.$location.path('/ward/' + address.formattedAddress);
+        _this.$location.url('/ward?address=' + address.formattedAddress + "&wardName=" + wardInfo.name);
     });
 
 };
