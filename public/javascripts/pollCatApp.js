@@ -31,6 +31,9 @@ pollCatModule.config([
                     loadQuestionData: loadQuestionData
                 }
             })
+            .when('/contact', {
+                templateUrl: '/html/views/contact.html'
+            })
             .otherwise({
                 redirectTo: '/home'
             });

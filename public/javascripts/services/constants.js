@@ -5,7 +5,7 @@ pollCatModule.factory('constants', function() {
 
 var Constants = function() {
     this.navItemEnum = {
-        HOME: ['home'],
+        HOME: ['home', 'contact'],
         VOTE: ['vote', 'ward'],
         RESULTS: ['results']
     };
