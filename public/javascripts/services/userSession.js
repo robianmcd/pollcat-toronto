@@ -82,6 +82,9 @@ UserSession.prototype.getCandidateMap = function() {
     return this.candidateMap;
 };
 
+UserSession.prototype.deleteCandidateMap = function() {
+    this.candidateMap = null;
+};
 
 /*
  [
