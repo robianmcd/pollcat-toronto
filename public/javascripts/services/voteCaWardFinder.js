@@ -25,7 +25,7 @@ pollCatModule.service('voteCaWardFinder', function($filter, $rootScope, $http) {
             function(results, status) {
                 //Filters out records that are not street addresses or are not in the toronto Bounds
                 var matchingGoogleMapsAddresses = $filter('filter')(results, function(match) {
-                    var curLocation = new google.maps.LatLng(match.geometry.location.nb, match.geometry.location.ob);
+                    var curLocation = new google.maps.LatLng(match.geometry.location.lat(), match.geometry.location.lng());
 
                     return ($.inArray('street_address', match.types) !== -1) &&
                         _this.torontoBounds.contains(curLocation);
@@ -34,8 +34,8 @@ pollCatModule.service('voteCaWardFinder', function($filter, $rootScope, $http) {
                 var matchingAddresses = $.map(matchingGoogleMapsAddresses, function(address) {
                     return {
                         formattedAddress: address.formatted_address,
-                        lat: address.geometry.location.nb,
-                        lng: address.geometry.location.ob
+                        lat: address.geometry.location.lat(),
+                        lng: address.geometry.location.lng()
                     };
                 });
 
