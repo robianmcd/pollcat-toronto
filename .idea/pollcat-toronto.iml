@@ -7,14 +7,14 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Node.js v0.10.17 Core Modules" level="application" />
     <orderEntry type="library" name="angular" level="application" />
     <orderEntry type="library" name="Node.js Dependencies for pollcat-toronto" level="project" />
     <orderEntry type="library" name="sass-stdlib" level="application" />
-    <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="jquery" level="application" />
     <orderEntry type="library" name="angular" level="application" />
     <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="angular-route" level="application" />
+    <orderEntry type="library" name="angular-cookies" level="application" />
   </component>
 </module>
 
