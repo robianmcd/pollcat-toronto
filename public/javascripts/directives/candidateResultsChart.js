@@ -53,7 +53,9 @@ pollCatModule.directive("candidateResultsChart", function(constants) {
                     labels: {
                         enabled: false
                     },
-                    gridLineColor: 'transparent'
+                    gridLineColor: 'transparent',
+                    gridLineWidth: 0,
+                    minorGridLineWidth: 0
                 },
 
                 plotOptions: {
